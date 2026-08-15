@@ -1,0 +1,187 @@
+---
+import { primaryNav } from '../data/nav';
+import { SITE } from '../data/site';
+---
+
+<button
+  id="mobile-nav-toggle"
+  class="mobile-nav-toggle"
+  aria-expanded="false"
+  aria-controls="mobile-nav-panel"
+>
+  <span class="visually-hidden">Open menu</span>
+  <span class="mobile-nav-toggle__bars" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+</button>
+
+<div id="mobile-nav-panel" class="mobile-nav-panel" hidden>
+  <nav aria-label="Mobile">
+    <ul class="mobile-nav-panel__list">
+      {primaryNav.map((item) => (
+        <li>
+          <a href={item.href}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <div class="mobile-nav-panel__actions">
+    <a class="mobile-nav-panel__cta" href="/get-a-quote/">Get a Free Quote</a>
+    <a class="mobile-nav-panel__phone" href={SITE.phoneHref}>Call {SITE.phoneDisplay}</a>
+  </div>
+</div>
+
+<style>
+  .mobile-nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+  }
+
+  @media (min-width: 900px) {
+    .mobile-nav-toggle {
+      display: none;
+    }
+  }
+
+  .mobile-nav-toggle__bars {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 22px;
+  }
+
+  .mobile-nav-toggle__bars span {
+    display: block;
+    height: 2px;
+    background: var(--color-ink);
+    border-radius: 2px;
+    transition: transform var(--duration-base) var(--ease-out), opacity var(--duration-fast);
+  }
+
+  .mobile-nav-toggle[aria-expanded='true'] .mobile-nav-toggle__bars span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .mobile-nav-toggle[aria-expanded='true'] .mobile-nav-toggle__bars span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-nav-toggle[aria-expanded='true'] .mobile-nav-toggle__bars span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .mobile-nav-panel {
+    position: fixed;
+    inset: var(--header-height) 0 0 0;
+    background: var(--color-white);
+    z-index: 60;
+    overflow-y: auto;
+    padding: var(--space-6) var(--container-pad) var(--space-9);
+    animation: mobile-nav-in var(--duration-base) var(--ease-out);
+  }
+
+  @media (min-width: 900px) {
+    .mobile-nav-panel {
+      display: none;
+    }
+  }
+
+  @keyframes mobile-nav-in {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .mobile-nav-panel__list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .mobile-nav-panel__list li {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mobile-nav-panel__list a {
+    display: block;
+    padding: var(--space-4) var(--space-1);
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--color-ink);
+  }
+
+  .mobile-nav-panel__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+  }
+
+  .mobile-nav-panel__cta {
+    text-align: center;
+    background: var(--color-coral);
+    color: var(--color-white);
+    font-weight: 600;
+    padding: var(--space-4);
+    border-radius: var(--radius-full);
+  }
+
+  .mobile-nav-panel__phone {
+    text-align: center;
+    color: var(--color-teal-dark);
+    font-weight: 600;
+    padding: var(--space-2);
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('mobile-nav-toggle');
+  const panel = document.getElementById('mobile-nav-panel');
+
+  if (toggle && panel) {
+    const closeMenu = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      panel.hidden = true;
+      document.body.style.overflow = '';
+    };
+
+    const openMenu = () => {
+      toggle.setAttribute('aria-expanded', 'true');
+      panel.hidden = false;
+      document.body.style.overflow = 'hidden';
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    panel.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    // Close the mobile panel automatically if the viewport grows past the
+    // nav breakpoint (e.g. rotating a tablet to landscape).
+    const mq = window.matchMedia('(min-width: 900px)');
+    mq.addEventListener('change', (e) => {
+      if (e.matches) closeMenu();
+    });
+  }
+</script>

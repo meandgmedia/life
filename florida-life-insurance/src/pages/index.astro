@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+---
+
+<BaseLayout
+  title="Florida Life Insurance | Life Insurance Made Simple."
+  description="Compare life insurance options available in Florida and get your personalized quote online. Term, whole, universal, and final expense coverage."
+  path="/"
+>
+  <!--
+    This is a Phase 1 foundation placeholder built to prove out the design
+    system (typography, color, buttons, cards, header, footer). The full
+    conversion-focused homepage (hero, How It Works, Life Insurance Types,
+    Final Expense section, FAQ, etc.) is built in Phase 2.
+  -->
+  <section class="hero section">
+    <svg class="hero__wave" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 120C240 60 480 180 720 120C960 60 1200 180 1440 120V200H0V120Z" fill="var(--color-ink-tint)"/>
+    </svg>
+    <div class="container hero__inner">
+      <span class="eyebrow">Florida &middot; Life Insurance</span>
+      <h1>Life Insurance Made Simple.</h1>
+      <p class="lead">
+        Compare life insurance options available in Florida, explore coverage
+        that fits your budget, and get your personalized quote online.
+      </p>
+      <div class="hero__actions">
+        <Button href="/get-a-quote/" variant="primary" size="lg">Get My Free Quote</Button>
+        <Button href="/life-insurance/" variant="secondary" size="lg">Explore Life Insurance</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container">
+      <span class="eyebrow">Coverage Options</span>
+      <h2>Built for how Floridians shop for coverage</h2>
+      <p class="lead">A quick look at the design system this site is built on — full details for each coverage type are on the way.</p>
+
+      <div class="grid grid--3" style="margin-top: var(--space-7);">
+        <Card eyebrow="Temporary" title="Term Life Insurance" href="/term-life-insurance/">
+          Affordable, temporary coverage designed to provide protection for a specific period.
+        </Card>
+        <Card eyebrow="Permanent" title="Whole Life Insurance" href="/whole-life-insurance/">
+          Permanent life insurance designed to provide lifelong coverage and potentially build cash value.
+        </Card>
+        <Card eyebrow="Seniors" title="Final Expense Insurance" href="/final-expense-insurance/">
+          Coverage designed to help with funeral, burial, cremation, and other final expenses.
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--ink section">
+    <div class="container" style="text-align:center;">
+      <h2>Ready to see your options?</h2>
+      <p class="lead" style="margin-inline:auto;">Get a personalized quote and see what coverage options may be available to you.</p>
+      <div style="margin-top: var(--space-6);">
+        <Button href="/get-a-quote/" variant="primary" size="lg">Get My Free Quote</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: var(--space-10);
+  }
+
+  .hero__wave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 140px;
+    z-index: -1;
+  }
+
+  .hero__inner {
+    max-width: 760px;
+  }
+
+  .hero h1 {
+    margin-top: var(--space-4);
+  }
+
+  .hero .lead {
+    margin-top: var(--space-4);
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-7);
+  }
+</style>

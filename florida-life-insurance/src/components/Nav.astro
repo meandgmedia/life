@@ -1,0 +1,64 @@
+---
+import { primaryNav } from '../data/nav';
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="nav" aria-label="Primary">
+  <ul class="nav__list">
+    {primaryNav.map((item) => {
+      const isActive = currentPath === item.href;
+      return (
+        <li>
+          <a href={item.href} class="nav__link" aria-current={isActive ? 'page' : undefined}>
+            {item.label}
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+</nav>
+
+<style>
+  .nav {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    .nav {
+      display: block;
+    }
+  }
+
+  .nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .nav__link {
+    position: relative;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    padding-block: var(--space-2);
+  }
+
+  .nav__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--color-coral);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--duration-base) var(--ease-out);
+  }
+
+  .nav__link:hover::after,
+  .nav__link[aria-current='page']::after {
+    transform: scaleX(1);
+  }
+</style>
