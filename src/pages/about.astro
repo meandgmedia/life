@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import TrustSection from '../components/TrustSection.astro';
+import CTA from '../components/CTA.astro';
+import { SITE } from '../data/site';
+
+const aboutPoints = [
+  {
+    title: 'Florida-Focused',
+    description: 'Built specifically around the life insurance options available to Florida residents.',
+  },
+  {
+    title: 'Transparent Information',
+    description: 'Plain-language explanations of how coverage, underwriting, and pricing actually work \u2014 not just marketing language.',
+  },
+  {
+    title: 'Online Convenience',
+    description: 'Compare options and apply from your phone or computer, without needing to schedule an in-person meeting.',
+  },
+  {
+    title: 'Personalized Options',
+    description: 'The coverage options you see are based on the information you provide, not a one-size-fits-all recommendation.',
+  },
+  {
+    title: 'No-Pressure Comparison',
+    description: 'Requesting a quote doesn\u2019t obligate you to apply. Take the time you need to compare options.',
+  },
+  {
+    title: 'Educational Resources',
+    description: 'Guides on the basics \u2014 coverage types, cost factors, and underwriting \u2014 so you can shop with confidence.',
+  },
+];
+---
+
+<BaseLayout
+  title="About Florida Life Insurance"
+  description="Florida Life Insurance helps Florida residents understand their life insurance options, compare coverage, and get a personalized quote online."
+  path="/about/"
+>
+  <section class="section--tight section">
+    <div class="container container--narrow">
+      <span class="eyebrow">About Us</span>
+      <h1 style="margin-top: var(--space-4);">Making Life Insurance Easier to Shop For</h1>
+      <p class="lead" style="margin-top: var(--space-4);">
+        Florida Life Insurance was built around a simple idea: shopping for
+        life insurance should be as straightforward as comparing any other
+        important purchase.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="What We Do" title="Helping Floridians compare life insurance online" />
+      <div class="prose">
+        <p>
+          We help Florida residents understand their life insurance options
+          and compare coverage \u2014 term, whole, universal, final expense, and
+          more \u2014 in one place, online. Rather than starting with a single
+          product or a single carrier, our goal is to help you see the range
+          of options available so you can make an informed decision about
+          what fits your needs and budget.
+        </p>
+        <p>
+          Requesting a quote through our site doesn't obligate you to apply
+          for coverage. You can compare options, ask questions, and take the
+          time you need before deciding whether \u2014 and how \u2014 to move
+          forward.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="Our Approach" title="What matters to us" align="center" />
+      <div style="margin-top: var(--space-8);">
+        <TrustSection points={aboutPoints} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Licensing" title="Licensed to serve Florida residents" />
+      <div class="prose">
+        <p>
+          {SITE.legalBusinessName} is a licensed insurance agency in the
+          state of Florida (License {SITE.floridaLicenseNumber}). Product
+          availability, coverage amounts, and pricing vary by carrier and
+          are subject to eligibility and underwriting. Not all applicants
+          will qualify for every product shown on this site.
+        </p>
+        <p>
+          Have a question before you get started? <a href="/contact/">Contact us</a>{' '}
+          or head straight to <a href="/get-a-quote/">get a free quote</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>
+
+<style>
+  .prose p {
+    color: var(--color-text-muted);
+    max-width: 68ch;
+  }
+
+  .prose p + p {
+    margin-top: var(--space-4);
+  }
+
+  .prose a {
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .prose a:hover {
+    color: var(--color-teal);
+  }
+</style>

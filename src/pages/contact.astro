@@ -1,0 +1,173 @@
+---
+// ============================================================================
+// Contact form — currently wired for Web3Forms (https://web3forms.com), a
+// service that lets a static site accept form submissions without a backend.
+//
+// TO GO LIVE:
+//   1. Create a free Web3Forms account and get an Access Key.
+//   2. Replace YOUR_WEB3FORMS_ACCESS_KEY_HERE below with the real key.
+//   That's the only change needed \u2014 the form already posts to Web3Forms'
+//   endpoint and includes the recommended honeypot spam field.
+//
+// If you'd rather use a different provider (Formspree, Netlify Forms, your
+// own endpoint, etc.), just change the <form action="..."> URL and the
+// hidden fields below to match that provider's requirements.
+// ============================================================================
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import { SITE } from '../data/site';
+
+const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY_HERE';
+---
+
+<BaseLayout
+  title="Contact Us"
+  description="Have a question about life insurance in Florida? Contact Florida Life Insurance, or get a free personalized quote online."
+  path="/contact/"
+>
+  <section class="section--tight section">
+    <div class="container container--narrow">
+      <span class="eyebrow">Contact Us</span>
+      <h1 style="margin-top: var(--space-4);">We're Happy to Help</h1>
+      <p class="lead" style="margin-top: var(--space-4);">
+        Have a question about coverage, the application process, or
+        something else? Send us a message and we'll get back to you.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container contact-grid">
+      <form
+        class="contact-form"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+        <!-- Web3Forms required fields \u2014 see comment above to activate -->
+        <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+        <input type="hidden" name="subject" value="New message from florida-life-insurance.com" />
+        <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off" />
+
+        <div class="form-row form-row--2">
+          <div class="form-field">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" type="text" id="name" name="name" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" required />
+          </div>
+        </div>
+
+        <div class="form-row form-row--2">
+          <div class="form-field">
+            <label class="form-label" for="phone">Phone <span class="form-optional">(optional)</span></label>
+            <input class="form-input" type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="reason">Reason for Contact</label>
+            <select class="form-select" id="reason" name="reason" required>
+              <option value="">Select one</option>
+              <option value="Get a Quote">Get a Quote</option>
+              <option value="Question About Coverage">Question About Coverage</option>
+              <option value="Existing Policy">Existing Policy</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-textarea" id="message" name="message" required></textarea>
+        </div>
+
+        <Button type="submit" variant="primary" size="lg">Send Message</Button>
+      </form>
+
+      <aside class="contact-cta">
+        <h2>Need a Quote?</h2>
+        <p>
+          If you're ready to compare coverage, skip the message and get your
+          personalized quote in a few minutes.
+        </p>
+        <Button href="/get-a-quote/" variant="primary" size="lg">Get a Free Quote</Button>
+
+        <div class="contact-cta__details">
+          <p><strong>Phone</strong><br /><a href={SITE.phoneHref}>{SITE.phoneDisplay}</a></p>
+          <p><strong>Email</strong><br /><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1.4fr 1fr;
+    }
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+  }
+
+  .contact-cta {
+    background: var(--color-ink);
+    color: var(--color-text-inverse-muted);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+  }
+
+  .contact-cta h2 {
+    color: var(--color-white);
+    font-size: var(--fs-h3);
+  }
+
+  .contact-cta p {
+    margin-top: var(--space-3);
+    max-width: 40ch;
+  }
+
+  .contact-cta > :global(a.btn) {
+    margin-top: var(--space-5);
+  }
+
+  .contact-cta__details {
+    margin-top: var(--space-7);
+    padding-top: var(--space-6);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .contact-cta__details p {
+    max-width: none;
+    font-size: var(--fs-small);
+  }
+
+  .contact-cta__details strong {
+    color: var(--color-white);
+  }
+
+  .contact-cta__details a {
+    color: #6fd9d9;
+  }
+
+  .contact-cta__details a:hover {
+    color: var(--color-teal);
+  }
+</style>
