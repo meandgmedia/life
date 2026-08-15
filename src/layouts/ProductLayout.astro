@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import Button from '../components/Button.astro';
 import CTA from '../components/CTA.astro';
+import Breadcrumbs, { type Crumb } from '../components/Breadcrumbs.astro';
 import type { SeoProps } from '../lib/seo';
 
 type CtaLink = { label: string; href: string };
@@ -12,6 +13,7 @@ type Props = SeoProps & {
   lead: string;
   primaryCta?: CtaLink;
   secondaryCta?: CtaLink;
+  breadcrumbs?: Crumb[];
 };
 
 const {
@@ -20,6 +22,7 @@ const {
   lead,
   primaryCta = { label: 'Get My Free Quote', href: '/get-a-quote/' },
   secondaryCta,
+  breadcrumbs,
   ...seoProps
 } = Astro.props;
 ---
@@ -27,6 +30,7 @@ const {
 <BaseLayout {...seoProps}>
   <section class="product-hero section--tight section">
     <div class="container product-hero__inner">
+      {breadcrumbs && <Breadcrumbs items={breadcrumbs} />}
       <span class="eyebrow">{eyebrow}</span>
       <h1>{h1}</h1>
       <p class="lead">{lead}</p>

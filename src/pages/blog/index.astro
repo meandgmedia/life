@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import SectionHeading from '../../components/SectionHeading.astro';
 import BlogCard from '../../components/BlogCard.astro';
 import CTA from '../../components/CTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
@@ -17,11 +17,12 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 >
   <section class="section--tight section">
     <div class="container container--narrow">
-      <SectionHeading
-        eyebrow="Blog"
-        title="Life insurance, explained simply"
-        lead="Straightforward guides to help you understand your options before you get a quote."
-      />
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog' }]} />
+      <span class="eyebrow">Blog</span>
+      <h1 style="margin-top: var(--space-4);">Life Insurance, Explained Simply</h1>
+      <p class="lead" style="margin-top: var(--space-4);">
+        Straightforward guides to help you understand your options before you get a quote.
+      </p>
     </div>
   </section>
 

@@ -1,0 +1,44 @@
+# Florida Life Insurance
+
+> Florida Life Insurance helps Florida residents compare life insurance
+> options and get a personalized quote online. The site covers term, whole,
+> universal, final expense, burial, senior, no-medical-exam, and guaranteed
+> issue life insurance, all specific to what's available to Florida
+> residents.
+
+Florida Life Insurance is a licensed insurance agency website focused
+exclusively on Florida consumers. It is not a national insurance directory
+and does not currently cover other states. Product availability, pricing,
+and eligibility vary by carrier and are subject to underwriting — no
+product on this site is guaranteed to be available to every applicant.
+
+## Get a Quote
+
+- [Get a Free Quote](https://florida-life-insurance.com/get-a-quote/): Request a personalized Florida life insurance quote online.
+
+## Coverage Types
+
+- [Life Insurance (overview)](https://florida-life-insurance.com/life-insurance/): Introduction to all coverage types available in Florida.
+- [Term Life Insurance](https://florida-life-insurance.com/term-life-insurance/): Temporary coverage for a specific period (10/15/20/30 years).
+- [Whole Life Insurance](https://florida-life-insurance.com/whole-life-insurance/): Permanent coverage with a cash value component.
+- [Universal Life Insurance](https://florida-life-insurance.com/universal-life-insurance/): Flexible permanent coverage with adjustable premiums.
+- [Final Expense Insurance](https://florida-life-insurance.com/final-expense-insurance/): Coverage for funeral, burial, and cremation costs.
+- [Burial Insurance](https://florida-life-insurance.com/burial-insurance/): Coverage focused specifically on funeral and burial costs.
+- [Senior Life Insurance](https://florida-life-insurance.com/senior-life-insurance/): Life insurance options for older adults.
+- [No Medical Exam Life Insurance](https://florida-life-insurance.com/no-medical-exam-life-insurance/): Coverage available without a traditional medical exam.
+- [Guaranteed Issue Life Insurance](https://florida-life-insurance.com/guaranteed-issue-life-insurance/): Coverage available without health questions, within eligible age ranges.
+
+## Blog
+
+- [Blog Index](https://florida-life-insurance.com/blog/): Educational articles about life insurance in Florida.
+- [Life Insurance in Florida: A Complete Guide](https://florida-life-insurance.com/blog/life-insurance-in-florida-a-complete-guide/)
+- [How Much Does Life Insurance Cost in Florida?](https://florida-life-insurance.com/blog/how-much-does-life-insurance-cost-in-florida/)
+
+## Company
+
+- [About](https://florida-life-insurance.com/about/): Who Florida Life Insurance is and how it works.
+- [Contact](https://florida-life-insurance.com/contact/): Contact form and direct contact information.
+
+## Related Site
+
+- [Florida Final Expense](https://floridafinalexpense.com): A sister site specializing specifically in Florida final expense insurance.

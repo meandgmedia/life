@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://florida-life-insurance.com/sitemap.xml
