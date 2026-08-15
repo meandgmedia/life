@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteRater from '../components/QuoteRater.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQ from '../components/FAQ.astro';
+import { quotePageFaq } from '../data/faq';
+
+const steps = [
+  {
+    title: 'Get Your Quote',
+    description: 'Share a few basic details about yourself and the coverage you\u2019re looking for.',
+  },
+  {
+    title: 'Compare Your Options',
+    description: 'Review the coverage options available to you based on what you provided.',
+  },
+  {
+    title: 'Apply & Get Covered',
+    description: 'Complete your application online and, if approved and eligible, obtain coverage.',
+  },
+];
+
+const trustChips = ['Florida-Focused', 'Multiple Coverage Options', 'Apply Online'];
+---
+
+<BaseLayout
+  title="Get a Free Florida Life Insurance Quote"
+  description="Compare available life insurance options and find coverage that fits your needs and budget. Get your personalized Florida life insurance quote online."
+  path="/get-a-quote/"
+>
+  <section class="quote-hero section--tight section">
+    <div class="container quote-hero__inner">
+      <span class="eyebrow">Florida &middot; Life Insurance</span>
+      <h1>Get Your Florida Life Insurance Quote</h1>
+      <p class="lead">
+        Compare available life insurance options and find coverage that fits
+        your needs and budget.
+      </p>
+
+      <ul class="quote-hero__chips">
+        {trustChips.map((chip) => <li>{chip}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section--tight section">
+    <div class="container container--narrow">
+      <QuoteRater />
+
+      <p class="quote-disclosure">
+        Coverage is subject to eligibility and underwriting. Product
+        availability and pricing vary by carrier and applicant. Some
+        policies may be issued quickly depending on eligibility and carrier
+        underwriting.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container">
+      <SectionHeading
+        eyebrow="What Happens Next"
+        title="From quote to coverage in three steps"
+        align="center"
+      />
+      <div style="margin-top: var(--space-8);">
+        <HowItWorks steps={steps} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="FAQ" title="Questions about getting a quote" />
+      <div style="margin-top: var(--space-7);">
+        <FAQ items={quotePageFaq} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .quote-hero__inner {
+    max-width: 720px;
+  }
+
+  .quote-hero h1 {
+    margin-top: var(--space-4);
+  }
+
+  .quote-hero .lead {
+    margin-top: var(--space-4);
+  }
+
+  .quote-hero__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+  }
+
+  .quote-hero__chips li {
+    font-size: var(--fs-small);
+    font-weight: 600;
+    color: var(--color-teal-dark);
+    background: var(--color-teal-tint);
+    border-radius: var(--radius-full);
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .quote-disclosure {
+    max-width: none;
+    margin-top: var(--space-5);
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+  }
+</style>
