@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout
+  title="Terms of Use"
+  description="Terms and conditions for using the Florida Life Insurance website."
+  path="/terms-of-use/"
+  noindex={true}
+>
+  <section class="section--tight section">
+    <div class="container container--narrow">
+      <span class="eyebrow">Legal</span>
+      <h1 style="margin-top: var(--space-4);">Terms of Use</h1>
+      <p class="lead" style="margin-top: var(--space-4);">Last updated: [Date]</p>
+
+      <div class="legal-notice">
+        <strong>Draft placeholder.</strong> This page is a structural
+        starting point, not a finished legal document. It must be reviewed
+        and completed by a licensed attorney before this site goes live.
+      </div>
+
+      <div class="prose">
+        <h2>Acceptance of Terms</h2>
+        <p>
+          By using this website, you agree to these Terms of Use. If you do
+          not agree, please do not use this site. [Complete with your
+          actual acceptance terms.]
+        </p>
+
+        <h2>No Guarantee of Coverage</h2>
+        <p>
+          Information on this site is for general educational purposes and
+          does not constitute an offer of insurance, a binding quote, or a
+          guarantee of coverage. Product availability, pricing, and
+          eligibility are determined by the applicable insurance carrier
+          and are subject to underwriting.
+        </p>
+
+        <h2>Use of the Site</h2>
+        <p>
+          [Describe permitted and prohibited uses of the site, intellectual
+          property ownership, and any restrictions on copying or
+          redistributing content.]
+        </p>
+
+        <h2>Third-Party Links and Tools</h2>
+        <p>
+          This site may link to or embed third-party tools, including the
+          BackNine quote and application platform and{' '}
+          <a href="https://floridafinalexpense.com">floridafinalexpense.com</a>.
+          We are not responsible for the content or practices of third-party
+          sites. [Complete with your actual third-party terms.]
+        </p>
+
+        <h2>Limitation of Liability</h2>
+        <p>
+          [Complete with your actual limitation of liability language,
+          reviewed by counsel.]
+        </p>
+
+        <h2>Governing Law</h2>
+        <p>
+          These terms are governed by the laws of the State of Florida.
+          [Complete with your actual governing law and dispute resolution
+          terms.]
+        </p>
+
+        <h2>Contact Us</h2>
+        <p>
+          Questions about these terms can be sent to{' '}
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or through our{' '}
+          <a href="/contact/">contact page</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-notice {
+    margin-top: var(--space-7);
+    padding: var(--space-5) var(--space-6);
+    background: var(--color-coral-tint);
+    border: 1px solid rgba(201, 62, 29, 0.25);
+    border-radius: var(--radius-md);
+    color: var(--color-ink);
+    font-size: var(--fs-small);
+    max-width: 68ch;
+  }
+
+  .prose {
+    margin-top: var(--space-8);
+    max-width: 68ch;
+  }
+
+  .prose h2 {
+    margin-top: var(--space-8);
+    font-size: var(--fs-h3);
+  }
+
+  .prose h2:first-child {
+    margin-top: 0;
+  }
+
+  .prose p {
+    margin-top: var(--space-3);
+    color: var(--color-text-muted);
+  }
+
+  .prose a {
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .prose a:hover {
+    color: var(--color-teal);
+  }
+</style>

@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="How Florida Life Insurance collects, uses, and protects information submitted through this website."
+  path="/privacy-policy/"
+  noindex={true}
+>
+  <section class="section--tight section">
+    <div class="container container--narrow">
+      <span class="eyebrow">Legal</span>
+      <h1 style="margin-top: var(--space-4);">Privacy Policy</h1>
+      <p class="lead" style="margin-top: var(--space-4);">Last updated: [Date]</p>
+
+      <div class="legal-notice">
+        <strong>Draft placeholder.</strong> This page is a structural
+        starting point, not a finished legal document. It must be reviewed
+        and completed by a licensed attorney familiar with Florida and
+        federal privacy law (including any insurance-specific requirements)
+        before this site goes live.
+      </div>
+
+      <div class="prose">
+        <h2>Information We Collect</h2>
+        <p>
+          When you request a quote, submit the contact form, or otherwise
+          interact with this website, we may collect information you
+          provide directly — such as your name, contact information, date
+          of birth, ZIP code, and general health information — as well as
+          information collected automatically, such as browser type and
+          usage data. [Complete with your actual data collection practices.]
+        </p>
+
+        <h2>How We Use Information</h2>
+        <p>
+          Information submitted through this site is generally used to
+          provide quotes, facilitate applications with insurance carriers,
+          respond to inquiries, and improve the website. [Complete with
+          your actual data use practices, including any marketing use.]
+        </p>
+
+        <h2>Sharing With Third Parties</h2>
+        <p>
+          Quote and application information may be shared with insurance
+          carriers, the BackNine quote and application platform, and other
+          service providers involved in processing your request.
+          [Complete with a full list of third parties and purposes.]
+        </p>
+
+        <h2>Cookies and Tracking</h2>
+        <p>
+          [Describe any cookies, analytics, or advertising tracking
+          technologies used on this site, and how visitors can opt out.]
+        </p>
+
+        <h2>Your Choices</h2>
+        <p>
+          [Describe how a visitor can access, correct, or request deletion
+          of their information, and any rights available under applicable
+          law.]
+        </p>
+
+        <h2>Contact Us</h2>
+        <p>
+          Questions about this policy can be sent to{' '}
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or through our{' '}
+          <a href="/contact/">contact page</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-notice {
+    margin-top: var(--space-7);
+    padding: var(--space-5) var(--space-6);
+    background: var(--color-coral-tint);
+    border: 1px solid rgba(201, 62, 29, 0.25);
+    border-radius: var(--radius-md);
+    color: var(--color-ink);
+    font-size: var(--fs-small);
+    max-width: 68ch;
+  }
+
+  .prose {
+    margin-top: var(--space-8);
+    max-width: 68ch;
+  }
+
+  .prose h2 {
+    margin-top: var(--space-8);
+    font-size: var(--fs-h3);
+  }
+
+  .prose h2:first-child {
+    margin-top: 0;
+  }
+
+  .prose p {
+    margin-top: var(--space-3);
+    color: var(--color-text-muted);
+  }
+
+  .prose a {
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .prose a:hover {
+    color: var(--color-teal);
+  }
+</style>

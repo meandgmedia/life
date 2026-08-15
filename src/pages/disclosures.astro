@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout
+  title="Insurance Disclosures"
+  description="Important disclosures about insurance products, licensing, and eligibility referenced on this website."
+  path="/disclosures/"
+  noindex={true}
+>
+  <section class="section--tight section">
+    <div class="container container--narrow">
+      <span class="eyebrow">Legal</span>
+      <h1 style="margin-top: var(--space-4);">Insurance Disclosures</h1>
+      <p class="lead" style="margin-top: var(--space-4);">Last updated: [Date]</p>
+
+      <div class="legal-notice">
+        <strong>Draft placeholder.</strong> This page is a structural
+        starting point. It must be completed with your agency's actual
+        licensing details and reviewed by a licensed attorney or compliance
+        professional before this site goes live — we have not invented any
+        regulatory information here.
+      </div>
+
+      <div class="prose">
+        <h2>Licensing</h2>
+        <p>
+          {SITE.legalBusinessName} is a licensed insurance agency in the
+          state of Florida (License {SITE.floridaLicenseNumber}).
+          [Replace with your actual legal business name and license
+          number(s), including any individual producer licenses that need
+          to be disclosed.]
+        </p>
+
+        <h2>Product Availability</h2>
+        <p>
+          Not every product referenced on this site is available in every
+          situation. Product availability, coverage amounts, features, and
+          pricing vary by insurance carrier and are subject to the
+          applicant's eligibility and the carrier's underwriting
+          requirements.
+        </p>
+
+        <h2>No Guarantee of Approval</h2>
+        <p>
+          Requesting a quote through this site does not guarantee approval
+          for coverage. Some policies may be issued quickly depending on
+          eligibility and carrier underwriting; others may require
+          additional review, including a medical exam for certain products.
+        </p>
+
+        <h2>Carrier Relationships</h2>
+        <p>
+          [List the insurance carriers you are appointed to represent, or
+          describe generally how carrier relationships work, without
+          overstating any specific carrier partnership.]
+        </p>
+
+        <h2>State Availability</h2>
+        <p>
+          This website is currently focused on insurance products available
+          to Florida residents. [Add any additional state-specific
+          disclosures required by your compliance team.]
+        </p>
+
+        <h2>Questions</h2>
+        <p>
+          For questions about a specific product, license, or disclosure,
+          contact us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>{' '}
+          or through our <a href="/contact/">contact page</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-notice {
+    margin-top: var(--space-7);
+    padding: var(--space-5) var(--space-6);
+    background: var(--color-coral-tint);
+    border: 1px solid rgba(201, 62, 29, 0.25);
+    border-radius: var(--radius-md);
+    color: var(--color-ink);
+    font-size: var(--fs-small);
+    max-width: 68ch;
+  }
+
+  .prose {
+    margin-top: var(--space-8);
+    max-width: 68ch;
+  }
+
+  .prose h2 {
+    margin-top: var(--space-8);
+    font-size: var(--fs-h3);
+  }
+
+  .prose h2:first-child {
+    margin-top: 0;
+  }
+
+  .prose p {
+    margin-top: var(--space-3);
+    color: var(--color-text-muted);
+  }
+
+  .prose a {
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .prose a:hover {
+    color: var(--color-teal);
+  }
+</style>
