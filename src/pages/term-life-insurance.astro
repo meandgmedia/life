@@ -1,0 +1,127 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQ from '../components/FAQ.astro';
+
+const faqItems = [
+  {
+    question: 'What term lengths are typically available?',
+    answer:
+      'Common term lengths include 10, 15, 20, and 30 years. The right length usually lines up with a specific need, like the years remaining on a mortgage or until children are financially independent.',
+  },
+  {
+    question: 'Does the premium change during the term?',
+    answer:
+      'Many term policies offer level premiums, meaning your payment stays the same for the length of the term, though this varies by product and carrier.',
+  },
+  {
+    question: 'What happens when the term ends?',
+    answer:
+      'Coverage typically ends unless the policy includes a renewal or conversion option. Some term policies allow you to convert to a permanent policy without new health questions \u2014 availability depends on the product and carrier.',
+  },
+  {
+    question: 'Is term life insurance cheaper than whole life insurance?',
+    answer:
+      'Term life insurance is generally more affordable than permanent coverage for the same death benefit, because it covers a limited period and doesn\u2019t build cash value. Actual pricing depends on your age, health, and the coverage amount.',
+  },
+];
+---
+
+<ProductLayout
+  title="Term Life Insurance in Florida"
+  description="Affordable, temporary life insurance coverage for a specific period \u2014 10, 15, 20, or 30 years. Compare term life insurance options in Florida."
+  path="/term-life-insurance/"
+  eyebrow="Florida &middot; Term Life"
+  h1="Term Life Insurance in Florida"
+  lead="Affordable, temporary coverage designed to protect your family for a specific period of time."
+  secondaryCta={{ label: 'Compare With Whole Life', href: '/whole-life-insurance/' }}
+>
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Overview" title="What is term life insurance?" />
+      <div class="prose">
+        <p>
+          Term life insurance provides coverage for a set period of time \u2014
+          typically 10, 15, 20, or 30 years. If you pass away during that
+          term, your beneficiaries receive the policy's death benefit. If the
+          term ends and you're still living, coverage generally stops unless
+          you renew or convert the policy.
+        </p>
+        <p>
+          Because it's designed to cover a defined period rather than your
+          entire lifetime, term life insurance is typically one of the more
+          affordable ways to secure a larger death benefit \u2014 which is why
+          it's often used to cover specific, time-limited financial
+          responsibilities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Who Considers It" title="Common reasons people choose term life" />
+      <ul class="check-list" style="margin-top: var(--space-6);">
+        <li>Replacing income for a spouse or family for a specific number of years</li>
+        <li>Covering the remaining years on a mortgage</li>
+        <li>Protecting a young family until children are financially independent</li>
+        <li>Securing a larger death benefit at a more affordable premium</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Term vs. Whole" title="Term life vs. whole life insurance" />
+      <div class="prose">
+        <p>
+          The main difference is duration and cash value. Term life covers a
+          specific period and doesn't build cash value, while{' '}
+          <a href="/whole-life-insurance/">whole life insurance</a> is
+          permanent coverage designed to last your lifetime and may build
+          cash value over time. Term is typically more affordable for the
+          same death benefit; whole life typically costs more but adds a
+          lifelong, cash-value component.
+        </p>
+        <p>
+          Many people use both at different life stages \u2014 for example,
+          term coverage while raising a family, and a smaller permanent
+          policy for final expenses later in life. You can explore{' '}
+          <a href="/final-expense-insurance/">final expense insurance</a>{' '}
+          or return to the full{' '}
+          <a href="/life-insurance/">overview of life insurance types</a>{' '}
+          in Florida.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="FAQ" title="Term life insurance questions" />
+      <div style="margin-top: var(--space-7);">
+        <FAQ items={faqItems} />
+      </div>
+    </div>
+  </section>
+</ProductLayout>
+
+<style>
+  .prose p {
+    color: var(--color-text-muted);
+    max-width: 68ch;
+  }
+
+  .prose p + p {
+    margin-top: var(--space-4);
+  }
+
+  .prose a {
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .prose a:hover {
+    color: var(--color-teal);
+  }
+</style>

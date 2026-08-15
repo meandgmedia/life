@@ -1,0 +1,118 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQ from '../components/FAQ.astro';
+
+const faqItems = [
+  {
+    question: 'Is there an age limit for life insurance?',
+    answer:
+      'Age limits vary by product and carrier. Some traditional term or whole life products have maximum issue ages, while final expense, guaranteed issue, and simplified issue products are often specifically designed for older applicants.',
+  },
+  {
+    question: 'Can seniors with health conditions still qualify?',
+    answer:
+      'Often, yes. Simplified issue and guaranteed issue products are designed with health conditions in mind \u2014 simplified issue involves a short health questionnaire, while guaranteed issue typically involves no health questions at all, subject to age and product limits.',
+  },
+  {
+    question: 'What\u2019s the difference between simplified issue and guaranteed issue?',
+    answer:
+      'Simplified issue policies ask a limited set of health questions and skip the medical exam. Guaranteed issue policies typically ask no health questions, which can make them easier to qualify for, though they often come with lower coverage limits or a graded death benefit period.',
+  },
+  {
+    question: 'What do seniors typically use life insurance for?',
+    answer:
+      'Common goals include covering final expenses, leaving a financial gift to family, paying off remaining debt, or supplementing an existing policy that may no longer provide enough coverage.',
+  },
+];
+---
+
+<ProductLayout
+  title="Senior Life Insurance in Florida"
+  description="Life insurance options designed for older adults. Compare senior life insurance coverage in Florida, including simplified and guaranteed issue options."
+  path="/senior-life-insurance/"
+  eyebrow="Florida &middot; Senior Life"
+  h1="Senior Life Insurance in Florida"
+  lead="Life insurance options designed for older adults."
+  secondaryCta={{ label: 'See Final Expense Insurance', href: '/final-expense-insurance/' }}
+>
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Overview" title="Life insurance options for older adults" />
+      <div class="prose">
+        <p>
+          Life insurance for seniors covers a range of products, not just one
+          type of policy. Depending on your age and health, you might
+          qualify for traditional term or whole life coverage, or you might
+          consider products specifically designed for easier qualification,
+          like simplified issue or{' '}
+          <a href="/guaranteed-issue-life-insurance/">guaranteed issue life insurance</a>.
+        </p>
+        <p>
+          Many seniors focus on smaller coverage amounts intended for{' '}
+          <a href="/final-expense-insurance/">final expenses</a> or{' '}
+          <a href="/burial-insurance/">burial costs</a>, while others look
+          for larger coverage to leave a financial gift or pay off remaining
+          debt.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Considerations" title="What to think about at different ages" />
+      <ul class="check-list" style="margin-top: var(--space-6);">
+        <li>How age and health may affect which products you qualify for</li>
+        <li>Whether a medical exam, health questions, or no questions fits your situation</li>
+        <li>How much coverage fits your goals \u2014 final expenses, a legacy gift, or debt payoff</li>
+        <li>Whether an existing policy needs to be supplemented rather than replaced</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Explore More" title="Related coverage options" />
+      <div class="prose">
+        <p>
+          If a medical exam is a concern, see{' '}
+          <a href="/no-medical-exam-life-insurance/">no medical exam life insurance</a>{' '}
+          and <a href="/guaranteed-issue-life-insurance/">guaranteed issue life insurance</a>.
+          For a full comparison of options, visit the{' '}
+          <a href="/life-insurance/">overview of life insurance types</a> in
+          Florida.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="FAQ" title="Senior life insurance questions" />
+      <div style="margin-top: var(--space-7);">
+        <FAQ items={faqItems} />
+      </div>
+    </div>
+  </section>
+</ProductLayout>
+
+<style>
+  .prose p {
+    color: var(--color-text-muted);
+    max-width: 68ch;
+  }
+
+  .prose p + p {
+    margin-top: var(--space-4);
+  }
+
+  .prose a {
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .prose a:hover {
+    color: var(--color-teal);
+  }
+</style>

@@ -1,0 +1,125 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQ from '../components/FAQ.astro';
+import { RELATED_SITES } from '../data/site';
+
+const faqItems = [
+  {
+    question: 'How is final expense insurance different from a regular life insurance policy?',
+    answer:
+      'Final expense insurance is a type of whole life insurance, typically with smaller coverage amounts designed specifically to help with funeral, burial, and related costs \u2014 rather than replacing income or covering a mortgage the way a larger policy might.',
+  },
+  {
+    question: 'Do I need a medical exam for final expense insurance?',
+    answer:
+      'Usually not. Most final expense policies use simplified issue underwriting, meaning you answer a short set of health questions instead of taking a medical exam. Some guaranteed issue options are also available with no health questions at all.',
+  },
+  {
+    question: 'What can the death benefit be used for?',
+    answer:
+      'Beneficiaries can generally use the death benefit for anything \u2014 funeral and burial costs, cremation, outstanding medical bills, or any other final expenses \u2014 there\u2019s typically no restriction on how the money is spent.',
+  },
+  {
+    question: 'What if I have health conditions?',
+    answer:
+      'Many final expense products are designed with health conditions in mind, including simplified issue and guaranteed issue options. Eligibility, pricing, and any waiting periods vary by carrier and product.',
+  },
+];
+---
+
+<ProductLayout
+  title="Final Expense Insurance in Florida"
+  description="Coverage designed to help with funeral, burial, cremation, and other final expenses. Compare final expense insurance options in Florida."
+  path="/final-expense-insurance/"
+  eyebrow="Florida &middot; Final Expense"
+  h1="Final Expense Insurance in Florida"
+  lead="Coverage designed to help with funeral, burial, cremation, and other final expenses."
+  secondaryCta={{ label: 'Explore Senior Life Insurance', href: '/senior-life-insurance/' }}
+>
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Overview" title="What is final expense insurance?" />
+      <div class="prose">
+        <p>
+          Final expense insurance (also called burial or funeral insurance)
+          is a type of permanent life insurance designed to help cover the
+          costs that come with a funeral, burial, cremation, and other
+          end-of-life expenses. Coverage amounts are generally smaller than
+          traditional life insurance policies \u2014 often enough to cover
+          funeral-related costs and any small remaining bills, rather than
+          replacing years of income.
+        </p>
+        <p>
+          Most final expense policies use simplified issue underwriting,
+          meaning approval is typically based on a short health
+          questionnaire rather than a medical exam, which makes it a common
+          option for older adults or anyone who wants an easier
+          qualification process.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Who Considers It" title="Common reasons people choose final expense insurance" />
+      <ul class="check-list" style="margin-top: var(--space-6);">
+        <li>Wanting to ease the financial burden on family members</li>
+        <li>Covering funeral, burial, or cremation costs specifically</li>
+        <li>Preferring simplified underwriting over a medical exam</li>
+        <li>Supplementing an existing life insurance policy with dedicated final-expense coverage</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Related Coverage" title="Explore related options" />
+      <div class="prose">
+        <p>
+          Final expense insurance is closely related to{' '}
+          <a href="/burial-insurance/">burial insurance</a> and is commonly
+          paired with <a href="/senior-life-insurance/">senior life insurance</a>{' '}
+          planning. If you're not sure which type fits your situation, the{' '}
+          <a href="/life-insurance/">full overview of life insurance types</a>{' '}
+          in Florida is a good place to start.
+        </p>
+        <p>
+          Specifically focused on final expense coverage? {RELATED_SITES.finalExpense.name}{' '}
+          specializes in Florida final expense insurance \u2014{' '}
+          <a href={RELATED_SITES.finalExpense.url}>learn more at {RELATED_SITES.finalExpense.url.replace('https://', '')}</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="FAQ" title="Final expense insurance questions" />
+      <div style="margin-top: var(--space-7);">
+        <FAQ items={faqItems} />
+      </div>
+    </div>
+  </section>
+</ProductLayout>
+
+<style>
+  .prose p {
+    color: var(--color-text-muted);
+    max-width: 68ch;
+  }
+
+  .prose p + p {
+    margin-top: var(--space-4);
+  }
+
+  .prose a {
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .prose a:hover {
+    color: var(--color-teal);
+  }
+</style>

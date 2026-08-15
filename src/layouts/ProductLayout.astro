@@ -1,0 +1,66 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Button from '../components/Button.astro';
+import CTA from '../components/CTA.astro';
+import type { SeoProps } from '../lib/seo';
+
+type CtaLink = { label: string; href: string };
+
+type Props = SeoProps & {
+  eyebrow: string;
+  h1: string;
+  lead: string;
+  primaryCta?: CtaLink;
+  secondaryCta?: CtaLink;
+};
+
+const {
+  eyebrow,
+  h1,
+  lead,
+  primaryCta = { label: 'Get My Free Quote', href: '/get-a-quote/' },
+  secondaryCta,
+  ...seoProps
+} = Astro.props;
+---
+
+<BaseLayout {...seoProps}>
+  <section class="product-hero section--tight section">
+    <div class="container product-hero__inner">
+      <span class="eyebrow">{eyebrow}</span>
+      <h1>{h1}</h1>
+      <p class="lead">{lead}</p>
+      <div class="product-hero__actions">
+        <Button href={primaryCta.href} variant="primary" size="lg">{primaryCta.label}</Button>
+        {secondaryCta && (
+          <Button href={secondaryCta.href} variant="secondary" size="lg">{secondaryCta.label}</Button>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <slot />
+
+  <CTA />
+</BaseLayout>
+
+<style>
+  .product-hero__inner {
+    max-width: 720px;
+  }
+
+  .product-hero h1 {
+    margin-top: var(--space-4);
+  }
+
+  .product-hero .lead {
+    margin-top: var(--space-4);
+  }
+
+  .product-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-7);
+  }
+</style>

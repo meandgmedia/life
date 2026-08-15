@@ -1,0 +1,137 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import InsuranceTypeCard from '../components/InsuranceTypeCard.astro';
+import FAQ from '../components/FAQ.astro';
+import { coverageTypes } from '../data/coverageTypes';
+
+const faqItems = [
+  {
+    question: 'How much life insurance do I need?',
+    answer:
+      'It depends on your situation \u2014 things like income you\u2019d want replaced, outstanding debt (such as a mortgage), future expenses like education, and any final expenses you\u2019d want covered. Many people start by adding up these categories, then compare that estimate against what different coverage amounts cost.',
+  },
+  {
+    question: 'What determines the cost of a life insurance policy?',
+    answer:
+      'Cost is primarily driven by your age, health, tobacco use, the coverage amount, the type of policy (term vs. permanent), and the length of the term for term policies. Two people with different health profiles can see very different pricing for the same coverage amount.',
+  },
+  {
+    question: 'Do I need a medical exam to qualify?',
+    answer:
+      'Not always. Fully underwritten policies often involve a medical exam, while simplified issue and guaranteed issue products typically do not \u2014 though they may have lower coverage limits or different pricing as a trade-off.',
+  },
+  {
+    question: 'Can I have more than one life insurance policy?',
+    answer:
+      'Yes, many people combine policies \u2014 for example, a larger term policy for income replacement alongside a smaller final expense policy \u2014 though eligibility and total coverage limits vary by carrier.',
+  },
+];
+---
+
+<ProductLayout
+  title="Florida Life Insurance | Compare Coverage Options"
+  description="Compare the main types of life insurance available to Florida residents \u2014 term, whole, universal, final expense, and more \u2014 and find coverage that fits your needs."
+  path="/life-insurance/"
+  eyebrow="Florida &middot; Life Insurance"
+  h1="Life Insurance in Florida"
+  lead="Life insurance comes in several different forms, each designed for different needs and budgets. Here's an overview of the coverage options available to Florida residents."
+  secondaryCta={{ label: 'Learn About Coverage Types', href: '#coverage-types' }}
+>
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="The Basics" title="What is life insurance?" />
+      <div class="prose">
+        <p>
+          Life insurance is a contract between you and an insurance carrier. In
+          exchange for premium payments, the carrier agrees to pay a death
+          benefit to your named beneficiaries if you pass away while the
+          policy is active. That benefit can be used for anything your
+          beneficiaries need \u2014 replacing lost income, paying off debt, covering
+          a mortgage, funding education, or handling funeral and final
+          expenses.
+        </p>
+        <p>
+          The two broad categories are <strong>term life insurance</strong>,
+          which covers you for a specific period of time, and{' '}
+          <strong>permanent life insurance</strong> (whole and universal
+          life), which is designed to last your entire lifetime and may build
+          cash value. Within those categories, underwriting can also vary \u2014
+          from fully underwritten policies that involve a medical exam to
+          simplified issue and guaranteed issue products designed for easier
+          qualification.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="coverage-types" class="section section--cloud">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Coverage Options"
+        title="Types of life insurance available in Florida"
+        lead="Each type is built for a different combination of budget, time horizon, and health circumstances."
+      />
+      <div class="grid grid--4" style="margin-top: var(--space-8);">
+        {coverageTypes.map((type) => (
+          <InsuranceTypeCard {...type} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Getting Started" title="How much coverage do you need?" />
+      <div class="prose">
+        <p>
+          There's no single right answer \u2014 it depends on what you want the
+          policy to accomplish. Many people think through a few categories
+          when deciding on a coverage amount:
+        </p>
+      </div>
+      <ul class="check-list" style="margin-top: var(--space-5);">
+        <li>Income your family would need replaced, and for how long</li>
+        <li>Outstanding debt, including a mortgage or other loans</li>
+        <li>Future expenses, like childcare or education</li>
+        <li>Final expenses \u2014 funeral, burial, or medical bills</li>
+      </ul>
+
+      <div class="prose" style="margin-top: var(--space-8);">
+        <h3>What affects the cost of a policy?</h3>
+        <p>
+          Pricing varies by carrier, but the most common factors are your age,
+          overall health, tobacco use, the coverage amount you choose, and
+          whether you select term or permanent coverage. Because every
+          applicant is different, the most accurate way to understand your
+          cost is to compare a personalized quote rather than relying on
+          general estimates.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="FAQ" title="Common life insurance questions" />
+      <div style="margin-top: var(--space-7);">
+        <FAQ items={faqItems} />
+      </div>
+    </div>
+  </section>
+</ProductLayout>
+
+<style>
+  .prose p {
+    color: var(--color-text-muted);
+    max-width: 68ch;
+  }
+
+  .prose p + p {
+    margin-top: var(--space-4);
+  }
+
+  .prose h3 {
+    margin-bottom: var(--space-3);
+  }
+</style>

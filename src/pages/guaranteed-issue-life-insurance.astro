@@ -1,0 +1,120 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQ from '../components/FAQ.astro';
+
+const faqItems = [
+  {
+    question: 'Does "guaranteed issue" mean everyone is approved?',
+    answer:
+      'It means that, within a specific age range, most applicants can qualify without answering health questions or taking a medical exam \u2014 not that every applicant, at every age, automatically receives coverage. Age limits and other eligibility rules still apply, and they vary by carrier and product.',
+  },
+  {
+    question: 'What is a graded death benefit?',
+    answer:
+      'Some guaranteed issue policies include a graded death benefit period \u2014 often the first two to three years \u2014 during which, if death occurs from natural causes, beneficiaries may receive a return of premiums paid plus interest rather than the full death benefit. Terms vary by carrier, and it\u2019s worth reviewing this detail closely before enrolling.',
+  },
+  {
+    question: 'Why would someone choose guaranteed issue over other options?',
+    answer:
+      'It\u2019s often chosen by people who have health conditions that make it difficult to qualify for simplified issue or fully underwritten coverage, or who simply want the most straightforward application process available.',
+  },
+  {
+    question: 'Are coverage amounts smaller with guaranteed issue policies?',
+    answer:
+      'Typically, yes. Because carriers take on more uncertainty by not asking health questions, guaranteed issue policies commonly offer smaller coverage amounts than simplified issue or fully underwritten products \u2014 which is part of why they\u2019re often used for final expense coverage.',
+  },
+];
+---
+
+<ProductLayout
+  title="Guaranteed Issue Life Insurance in Florida"
+  description="Life insurance that may be available without traditional medical underwriting, subject to product-specific terms and eligibility. Compare guaranteed issue options in Florida."
+  path="/guaranteed-issue-life-insurance/"
+  eyebrow="Florida &middot; Guaranteed Issue"
+  h1="Guaranteed Issue Life Insurance in Florida"
+  lead="Life insurance that may be available without traditional medical underwriting, subject to product-specific terms and eligibility."
+  secondaryCta={{ label: 'See No Medical Exam Options', href: '/no-medical-exam-life-insurance/' }}
+>
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Overview" title="What is guaranteed issue life insurance?" />
+      <div class="prose">
+        <p>
+          Guaranteed issue life insurance is a type of coverage designed so
+          that most applicants within an eligible age range can qualify
+          without answering health questions or taking a medical exam. It's
+          one of the most accessible ways to obtain coverage, which is why
+          it's frequently used by people who weren't able to qualify for
+          other types of policies.
+        </p>
+        <p>
+          That accessibility comes with trade-offs: guaranteed issue
+          policies typically offer smaller coverage amounts than other
+          products, and many include a graded death benefit period during
+          the first few years of the policy. Understanding these details
+          up front is an important part of deciding if it's the right fit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Who Considers It" title="Common reasons people choose guaranteed issue" />
+      <ul class="check-list" style="margin-top: var(--space-6);">
+        <li>Health conditions that make other coverage types difficult to qualify for</li>
+        <li>Wanting the simplest possible application process</li>
+        <li>Looking specifically for smaller, final-expense-style coverage</li>
+        <li>Prior declines from other life insurance applications</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Explore More" title="Related coverage" />
+      <div class="prose">
+        <p>
+          Guaranteed issue is often compared against other{' '}
+          <a href="/no-medical-exam-life-insurance/">no-medical-exam options</a>{' '}
+          and is commonly used for{' '}
+          <a href="/final-expense-insurance/">final expense</a> or{' '}
+          <a href="/senior-life-insurance/">senior life insurance</a>{' '}
+          planning. See the full{' '}
+          <a href="/life-insurance/">overview of life insurance types</a> in
+          Florida to compare all your options.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="FAQ" title="Guaranteed issue life insurance questions" />
+      <div style="margin-top: var(--space-7);">
+        <FAQ items={faqItems} />
+      </div>
+    </div>
+  </section>
+</ProductLayout>
+
+<style>
+  .prose p {
+    color: var(--color-text-muted);
+    max-width: 68ch;
+  }
+
+  .prose p + p {
+    margin-top: var(--space-4);
+  }
+
+  .prose a {
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .prose a:hover {
+    color: var(--color-teal);
+  }
+</style>

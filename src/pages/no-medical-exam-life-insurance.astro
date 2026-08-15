@@ -1,0 +1,125 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQ from '../components/FAQ.astro';
+
+const faqItems = [
+  {
+    question: 'How can I get approved without a medical exam?',
+    answer:
+      'Carriers use other ways to assess risk, such as a short health questionnaire (simplified issue), electronic health and prescription records, or no health questions at all (guaranteed issue). Requirements vary by product and carrier.',
+  },
+  {
+    question: 'Is no-medical-exam coverage more expensive?',
+    answer:
+      'It can be, since the carrier is taking on more uncertainty without exam results. That isn\u2019t true in every case, though \u2014 the best way to know is to compare a personalized quote against fully underwritten options.',
+  },
+  {
+    question: 'Are coverage amounts lower for no-exam policies?',
+    answer:
+      'Often, yes. No-medical-exam products, especially guaranteed issue policies, typically offer lower maximum coverage amounts than fully underwritten policies. Simplified issue products may offer higher limits than guaranteed issue, depending on the carrier.',
+  },
+  {
+    question: 'Who typically considers no-medical-exam coverage?',
+    answer:
+      'People who want a faster application process, have a health condition that could complicate a traditional exam, or are shopping specifically for smaller, final-expense-style coverage.',
+  },
+];
+---
+
+<ProductLayout
+  title="No Medical Exam Life Insurance in Florida"
+  description="Life insurance products that may allow applicants to obtain coverage without a traditional medical exam. Compare no medical exam options in Florida."
+  path="/no-medical-exam-life-insurance/"
+  eyebrow="Florida &middot; No Medical Exam"
+  h1="No Medical Exam Life Insurance in Florida"
+  lead="Products that may allow applicants to obtain coverage without a traditional medical exam."
+  secondaryCta={{ label: 'See Guaranteed Issue Options', href: '/guaranteed-issue-life-insurance/' }}
+>
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Overview" title="What is no medical exam life insurance?" />
+      <div class="prose">
+        <p>
+          No medical exam life insurance describes policies that skip the
+          in-person medical exam that's part of many traditional,
+          fully underwritten applications. Instead, carriers may rely on a
+          health questionnaire, electronic records, or, in the case of{' '}
+          <a href="/guaranteed-issue-life-insurance/">guaranteed issue</a>{' '}
+          products, no health assessment at all.
+        </p>
+        <p>
+          This isn't one single product \u2014 it's a category that spans
+          several underwriting approaches, each with different trade-offs
+          around coverage amount, pricing, and how quickly a decision is
+          made.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Underwriting Types" title="Common no-exam approaches" />
+      <ul class="check-list" style="margin-top: var(--space-6);">
+        <li>
+          <strong>Simplified issue</strong> \u2014 a short set of health
+          questions, no medical exam
+        </li>
+        <li>
+          <strong>Accelerated underwriting</strong> \u2014 uses records and data
+          instead of an exam for eligible applicants
+        </li>
+        <li>
+          <strong>Guaranteed issue</strong> \u2014 typically no health questions,
+          often with lower coverage limits
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Explore More" title="Related coverage" />
+      <div class="prose">
+        <p>
+          No-medical-exam options are commonly used alongside{' '}
+          <a href="/final-expense-insurance/">final expense insurance</a> and{' '}
+          <a href="/senior-life-insurance/">senior life insurance</a>{' '}
+          planning. To see how these fit with fully underwritten coverage,
+          visit the <a href="/life-insurance/">full overview of life insurance types</a>{' '}
+          in Florida.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="FAQ" title="No medical exam life insurance questions" />
+      <div style="margin-top: var(--space-7);">
+        <FAQ items={faqItems} />
+      </div>
+    </div>
+  </section>
+</ProductLayout>
+
+<style>
+  .prose p {
+    color: var(--color-text-muted);
+    max-width: 68ch;
+  }
+
+  .prose p + p {
+    margin-top: var(--space-4);
+  }
+
+  .prose a {
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .prose a:hover {
+    color: var(--color-teal);
+  }
+</style>

@@ -1,0 +1,137 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQ from '../components/FAQ.astro';
+
+const faqItems = [
+  {
+    question: 'Is burial insurance the same as final expense insurance?',
+    answer:
+      '"Burial insurance" and "final expense insurance" are often used interchangeably, and many carriers use the terms to describe the same type of product \u2014 a smaller, simplified-issue whole life policy meant to help cover funeral and burial-related costs.',
+  },
+  {
+    question: 'What funeral-related costs might this coverage help with?',
+    answer:
+      'Common categories include funeral home services, a casket or urn, burial plot or cremation, a headstone or marker, and related administrative costs. Beneficiaries generally aren\u2019t restricted in how they use the death benefit.',
+  },
+  {
+    question: 'How do I decide on a coverage amount?',
+    answer:
+      'Many people start by thinking through the specific arrangements they\u2019d want \u2014 burial vs. cremation, a particular funeral home, or family preferences \u2014 and use that as a starting point for comparing coverage amounts during a quote.',
+  },
+  {
+    question: 'Can I get burial insurance at an older age?',
+    answer:
+      'Yes \u2014 burial insurance is commonly purchased later in life, and many products are specifically designed for older adults with simplified or guaranteed issue underwriting. Availability and pricing still vary by age, carrier, and product.',
+  },
+];
+---
+
+<ProductLayout
+  title="Burial Insurance in Florida"
+  description="Coverage commonly used to help pay funeral and burial-related expenses. Compare burial insurance options in Florida."
+  path="/burial-insurance/"
+  eyebrow="Florida &middot; Burial Insurance"
+  h1="Burial Insurance in Florida"
+  lead="Coverage commonly used to help pay funeral and burial-related expenses."
+  secondaryCta={{ label: 'See Final Expense Insurance', href: '/final-expense-insurance/' }}
+>
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Overview" title="What is burial insurance?" />
+      <div class="prose">
+        <p>
+          Burial insurance is a type of coverage \u2014 usually a small, simplified
+          whole life policy \u2014 designed specifically to help pay for the costs
+          associated with a funeral and burial or cremation. It's frequently
+          purchased by people who want to plan ahead for those specific costs
+          without leaving family members to cover them out of pocket.
+        </p>
+        <p>
+          The term is closely related to{' '}
+          <a href="/final-expense-insurance/">final expense insurance</a> \u2014
+          in practice, many carriers use "burial insurance" and "final
+          expense insurance" to describe the same category of product.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Planning Ahead" title="What burial-related costs typically involve" />
+      <div class="prose" style="margin-bottom: var(--space-6);">
+        <p>
+          Funeral and burial arrangements involve several categories of cost,
+          and the total varies widely based on the choices a family makes.
+          Thinking through these categories can help you estimate a coverage
+          amount that fits your plans:
+        </p>
+      </div>
+      <ul class="check-list">
+        <li>Funeral home services and staff</li>
+        <li>Casket, urn, or burial container</li>
+        <li>Cemetery plot, burial, or cremation fees</li>
+        <li>Headstone, marker, or memorial costs</li>
+        <li>Transportation and administrative fees</li>
+      </ul>
+      <p class="prose-note">
+        These are general planning categories, not a quote or cost estimate.
+        Actual funeral and burial costs vary significantly by provider,
+        location, and the specific arrangements chosen.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Explore More" title="Related coverage" />
+      <div class="prose">
+        <p>
+          Burial insurance is often considered alongside broader{' '}
+          <a href="/final-expense-insurance/">final expense insurance</a> and{' '}
+          <a href="/senior-life-insurance/">senior life insurance</a> options.
+          If you're comparing coverage more broadly, see the full{' '}
+          <a href="/life-insurance/">overview of life insurance types</a> in
+          Florida.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="FAQ" title="Burial insurance questions" />
+      <div style="margin-top: var(--space-7);">
+        <FAQ items={faqItems} />
+      </div>
+    </div>
+  </section>
+</ProductLayout>
+
+<style>
+  .prose p {
+    color: var(--color-text-muted);
+    max-width: 68ch;
+  }
+
+  .prose p + p {
+    margin-top: var(--space-4);
+  }
+
+  .prose a {
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .prose a:hover {
+    color: var(--color-teal);
+  }
+
+  .prose-note {
+    margin-top: var(--space-5);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    max-width: 62ch;
+  }
+</style>

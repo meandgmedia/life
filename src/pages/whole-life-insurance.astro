@@ -1,0 +1,124 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQ from '../components/FAQ.astro';
+
+const faqItems = [
+  {
+    question: 'How does cash value work?',
+    answer:
+      'A portion of your premium may go toward a cash value component that can grow over time, depending on the policy. Many policies allow you to borrow against or withdraw from the cash value, though doing so can reduce the death benefit \u2014 details vary by carrier and product.',
+  },
+  {
+    question: 'Are premiums fixed for life?',
+    answer:
+      'Many whole life policies are designed with level premiums that don\u2019t increase as you age, which is part of why they typically cost more upfront than term coverage for the same death benefit.',
+  },
+  {
+    question: 'Can I get whole life insurance later in life?',
+    answer:
+      'Whole life is available at a range of ages, though pricing and underwriting requirements vary. Some carriers offer simplified issue whole life policies designed for easier qualification, often used for final expense planning.',
+  },
+  {
+    question: 'Is whole life insurance a good investment?',
+    answer:
+      'Whole life insurance is primarily a protection product with a cash value feature, not a replacement for traditional investment accounts. Whether it fits your goals depends on your full financial picture \u2014 a licensed agent can help you compare options.',
+  },
+];
+---
+
+<ProductLayout
+  title="Whole Life Insurance in Florida"
+  description="Permanent life insurance designed to provide lifelong coverage and potentially build cash value. Compare whole life insurance options in Florida."
+  path="/whole-life-insurance/"
+  eyebrow="Florida &middot; Whole Life"
+  h1="Whole Life Insurance in Florida"
+  lead="Permanent life insurance designed to provide lifelong coverage and potentially build cash value."
+  secondaryCta={{ label: 'Compare With Term Life', href: '/term-life-insurance/' }}
+>
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Overview" title="What is whole life insurance?" />
+      <div class="prose">
+        <p>
+          Whole life insurance is a type of permanent coverage designed to
+          last your entire lifetime, as long as premiums are paid. Unlike
+          term life, it doesn't expire after a set number of years. Many
+          whole life policies also include a cash value component that can
+          accumulate over time, which policyholders may be able to borrow
+          against or use in certain circumstances.
+        </p>
+        <p>
+          Because it's designed to stay in force for life and includes a
+          savings-like component, whole life insurance typically has a
+          higher premium than term coverage for the same death benefit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Who Considers It" title="Common reasons people choose whole life" />
+      <ul class="check-list" style="margin-top: var(--space-6);">
+        <li>Wanting coverage that doesn't expire after a set term</li>
+        <li>Building a cash value component alongside a death benefit</li>
+        <li>Leaving a guaranteed legacy or covering final expenses</li>
+        <li>Predictable, level premiums for long-term budgeting</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Whole vs. Universal" title="Whole life vs. universal life insurance" />
+      <div class="prose">
+        <p>
+          Both are types of permanent coverage, but they differ in
+          flexibility.{' '}
+          <a href="/universal-life-insurance/">Universal life insurance</a>{' '}
+          generally allows more flexibility to adjust premiums and death
+          benefits over time, while whole life is typically more rigid, with
+          fixed premiums and a guaranteed death benefit. Which one fits
+          depends on how much flexibility you want versus predictability.
+        </p>
+        <p>
+          If you're weighing whole life against a temporary option, see how
+          it compares to <a href="/term-life-insurance/">term life insurance</a>,
+          or return to the full{' '}
+          <a href="/life-insurance/">overview of life insurance types</a> in
+          Florida.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="FAQ" title="Whole life insurance questions" />
+      <div style="margin-top: var(--space-7);">
+        <FAQ items={faqItems} />
+      </div>
+    </div>
+  </section>
+</ProductLayout>
+
+<style>
+  .prose p {
+    color: var(--color-text-muted);
+    max-width: 68ch;
+  }
+
+  .prose p + p {
+    margin-top: var(--space-4);
+  }
+
+  .prose a {
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .prose a:hover {
+    color: var(--color-teal);
+  }
+</style>

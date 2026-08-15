@@ -1,0 +1,118 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQ from '../components/FAQ.astro';
+
+const faqItems = [
+  {
+    question: 'How is universal life different from whole life?',
+    answer:
+      'Both are permanent coverage, but universal life typically offers more flexibility to adjust your premium payments and death benefit over time, within limits set by the policy. Whole life is generally more fixed, with level premiums and a guaranteed death benefit.',
+  },
+  {
+    question: 'Can I change my premium payments?',
+    answer:
+      'Many universal life policies allow you to increase, decrease, or skip premium payments within certain limits, as long as the policy has enough cash value to cover its costs. Specific flexibility depends on the product and carrier.',
+  },
+  {
+    question: 'What is indexed universal life insurance?',
+    answer:
+      'Indexed universal life (IUL) is a type of universal life policy where cash value growth is tied to the performance of a market index, subject to caps, floors, and other policy terms. It\u2019s a more complex product \u2014 a licensed agent can walk you through the details.',
+  },
+  {
+    question: 'Does flexibility come with more risk?',
+    answer:
+      'The added flexibility of universal life means you have more control, but it also means the policy requires more active management \u2014 for example, underfunding a policy could affect how long coverage stays in force. Understanding the specific policy terms is important before enrolling.',
+  },
+];
+---
+
+<ProductLayout
+  title="Universal Life Insurance in Florida"
+  description="Flexible permanent life insurance with adjustable premiums and death benefit options. Compare universal life insurance options in Florida."
+  path="/universal-life-insurance/"
+  eyebrow="Florida &middot; Universal Life"
+  h1="Universal Life Insurance in Florida"
+  lead="Flexible permanent life insurance with adjustable premiums and death benefit options."
+  secondaryCta={{ label: 'Compare With Whole Life', href: '/whole-life-insurance/' }}
+>
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Overview" title="What is universal life insurance?" />
+      <div class="prose">
+        <p>
+          Universal life insurance is a type of permanent coverage that
+          offers more flexibility than traditional whole life insurance.
+          Within limits set by the policy, you may be able to adjust your
+          premium payments and death benefit over time as your needs change,
+          while the policy's cash value component continues to accumulate.
+        </p>
+        <p>
+          Because of that flexibility, universal life policies require a bit
+          more attention than a fixed whole life policy \u2014 understanding how
+          your premium payments affect the policy's cash value and staying
+          power is an important part of owning one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Who Considers It" title="Common reasons people choose universal life" />
+      <ul class="check-list" style="margin-top: var(--space-6);">
+        <li>Wanting permanent coverage with more flexibility than whole life</li>
+        <li>Anticipating that income or premium capacity may change over time</li>
+        <li>Interest in cash value growth options, including indexed strategies</li>
+        <li>Long-term estate or legacy planning alongside a licensed advisor</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Explore More" title="Comparing your permanent coverage options" />
+      <div class="prose">
+        <p>
+          If predictability matters more than flexibility, compare universal
+          life against <a href="/whole-life-insurance/">whole life insurance</a>,
+          which typically offers fixed premiums and a guaranteed death
+          benefit. If you're weighing permanent coverage against something
+          temporary, see how it compares to{' '}
+          <a href="/term-life-insurance/">term life insurance</a>, or return
+          to the full <a href="/life-insurance/">overview of life insurance types</a>{' '}
+          in Florida.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="FAQ" title="Universal life insurance questions" />
+      <div style="margin-top: var(--space-7);">
+        <FAQ items={faqItems} />
+      </div>
+    </div>
+  </section>
+</ProductLayout>
+
+<style>
+  .prose p {
+    color: var(--color-text-muted);
+    max-width: 68ch;
+  }
+
+  .prose p + p {
+    margin-top: var(--space-4);
+  }
+
+  .prose a {
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .prose a:hover {
+    color: var(--color-teal);
+  }
+</style>
