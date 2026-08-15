@@ -362,6 +362,87 @@ p {
   transform: rotate(-45deg);
 }
 
+/* ---- Rendered blog/article content (from Markdown) ------------------------ */
+.article-content {
+  max-width: 68ch;
+}
+
+.article-content > * + * {
+  margin-top: var(--space-5);
+}
+
+.article-content h2 {
+  margin-top: var(--space-9);
+  font-size: var(--fs-h3);
+}
+
+.article-content h2:first-child {
+  margin-top: 0;
+}
+
+.article-content h3 {
+  margin-top: var(--space-7);
+}
+
+.article-content p {
+  color: var(--color-text-muted);
+  line-height: var(--lh-body);
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: var(--space-6);
+  color: var(--color-text-muted);
+}
+
+.article-content ul {
+  list-style: disc;
+}
+
+.article-content ol {
+  list-style: decimal;
+}
+
+.article-content li + li {
+  margin-top: var(--space-2);
+}
+
+.article-content li strong {
+  color: var(--color-ink);
+}
+
+.article-content a {
+  color: var(--color-teal-dark);
+  font-weight: 600;
+}
+
+.article-content a:hover {
+  color: var(--color-teal);
+}
+
+.article-content blockquote {
+  border-left: 3px solid var(--color-teal);
+  background: var(--color-teal-tint);
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-sm);
+  color: var(--color-ink);
+}
+
+.article-content blockquote > * + * {
+  margin-top: var(--space-3);
+}
+
+.article-content hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin-block: var(--space-7);
+}
+
+.article-content em {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+}
+
 /* ---- Responsive breakpoints reference -------------------------------------
    Mobile-first. Named checkpoints used across components:
    - base:    < 640px  (phones)

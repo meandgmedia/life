@@ -1,0 +1,95 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTA from '../../components/CTA.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post, allPosts: posts },
+  }));
+}
+
+const { post, allPosts } = Astro.props;
+const { Content } = await render(post);
+
+const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const relatedPosts = allPosts
+  .filter((p) => p.id !== post.id)
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 2);
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  path={`/blog/${post.id}/`}
+  ogType="article"
+>
+  <article class="section--tight section">
+    <div class="container container--narrow">
+      <a class="article-back" href="/blog/">&larr; Back to Blog</a>
+
+      <span class="eyebrow">{formattedDate} &middot; {post.data.author}</span>
+      <h1 class="article-title">{post.data.title}</h1>
+      <p class="lead">{post.data.description}</p>
+
+      <div class="article-content" style="margin-top: var(--space-8);">
+        <Content />
+      </div>
+    </div>
+  </article>
+
+  {relatedPosts.length > 0 && (
+    <section class="section section--cloud">
+      <div class="container container--narrow">
+        <h2 class="related-heading">Related Reading</h2>
+        <div class="grid grid--2" style="margin-top: var(--space-6);">
+          {relatedPosts.map((related) => (
+            <BlogCard
+              title={related.data.title}
+              description={related.data.description}
+              publishDate={related.data.publishDate}
+              href={`/blog/${related.id}/`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <CTA />
+</BaseLayout>
+
+<style>
+  .article-back {
+    display: inline-block;
+    font-size: var(--fs-small);
+    font-weight: 600;
+    color: var(--color-teal-dark);
+    margin-bottom: var(--space-6);
+  }
+
+  .article-back:hover {
+    color: var(--color-teal);
+  }
+
+  .article-title {
+    margin-top: var(--space-3);
+  }
+
+  .lead {
+    margin-top: var(--space-4);
+  }
+
+  .related-heading {
+    font-size: var(--fs-h3);
+  }
+</style>
