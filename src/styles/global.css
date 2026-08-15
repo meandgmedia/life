@@ -126,6 +126,14 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Reserve space so the fixed sticky mobile CTA (see StickyMobileCTA.astro)
+   never overlaps footer content, including the legal disclosure text. */
+@media (max-width: 639px) {
+  body {
+    padding-bottom: 78px;
+  }
+}
+
 img,
 picture,
 svg,

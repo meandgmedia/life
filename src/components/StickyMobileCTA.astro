@@ -1,0 +1,73 @@
+---
+// Fixed bottom bar shown only below the 640px breakpoint, where the header's
+// "Get a Free Quote" button hides. Without this, mobile visitors have no
+// quote CTA visible except inside the hamburger menu. Hidden on the quote
+// page itself since showing "Get a Quote" while already on that page is
+// redundant.
+import { SITE } from '../data/site';
+
+const isQuotePage = Astro.url.pathname === '/get-a-quote/';
+---
+
+{!isQuotePage && (
+  <div class="sticky-mobile-cta">
+    <a class="sticky-mobile-cta__phone" href={SITE.phoneHref} aria-label={`Call ${SITE.phoneDisplay}`}>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M4 3h3l1.5 4L6.5 8.5a10 10 0 0 0 5 5l1.5-2L17 13v3a2 2 0 0 1-2 2C8.5 18 2 11.5 2 5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a class="sticky-mobile-cta__quote" href="/get-a-quote/">Get a Free Quote</a>
+  </div>
+)}
+
+<style>
+  .sticky-mobile-cta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    padding-bottom: max(var(--space-3), env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -8px 24px -8px rgba(14, 34, 56, 0.12);
+  }
+
+  @media (min-width: 640px) {
+    .sticky-mobile-cta {
+      display: none;
+    }
+  }
+
+  .sticky-mobile-cta__phone {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: var(--radius-full);
+    border: 1.5px solid var(--color-border-strong);
+    color: var(--color-ink);
+  }
+
+  .sticky-mobile-cta__quote {
+    flex: 1;
+    text-align: center;
+    background: var(--color-coral);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-full);
+  }
+
+  .sticky-mobile-cta__quote:active {
+    background: var(--color-coral-dark);
+  }
+</style>
