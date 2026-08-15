@@ -152,16 +152,26 @@ import { SITE } from '../data/site';
   const panel = document.getElementById('mobile-nav-panel');
 
   if (toggle && panel) {
-    const closeMenu = () => {
+    // Content behind the panel (main content, footer, sticky CTA) shouldn't
+    // be reachable by keyboard or screen reader while the panel is open.
+    const getBackgroundEls = () =>
+      Array.from(
+        document.querySelectorAll('#main-content, .site-footer, .sticky-mobile-cta')
+      );
+
+    const closeMenu = (opts = {}) => {
       toggle.setAttribute('aria-expanded', 'false');
       panel.hidden = true;
       document.body.style.overflow = '';
+      getBackgroundEls().forEach((el) => el.removeAttribute('inert'));
+      if (opts.returnFocus) toggle.focus();
     };
 
     const openMenu = () => {
       toggle.setAttribute('aria-expanded', 'true');
       panel.hidden = false;
       document.body.style.overflow = 'hidden';
+      getBackgroundEls().forEach((el) => el.setAttribute('inert', ''));
     };
 
     toggle.addEventListener('click', () => {
@@ -170,11 +180,13 @@ import { SITE } from '../data/site';
     });
 
     panel.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', closeMenu);
+      link.addEventListener('click', () => closeMenu());
     });
 
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        closeMenu({ returnFocus: true });
+      }
     });
 
     // Close the mobile panel automatically if the viewport grows past the
