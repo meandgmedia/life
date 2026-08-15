@@ -1,0 +1,58 @@
+---
+type TrustPoint = {
+  title: string;
+  description: string;
+};
+
+type Props = {
+  points: TrustPoint[];
+};
+
+const { points } = Astro.props;
+---
+
+<div class="trust-grid">
+  {points.map((point) => (
+    <div class="trust-point">
+      <h3>{point.title}</h3>
+      <p>{point.description}</p>
+    </div>
+  ))}
+</div>
+
+<style>
+  .trust-grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 640px) {
+    .trust-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .trust-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .trust-point {
+    padding: var(--space-5);
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .trust-point h3 {
+    font-size: 1.05rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .trust-point p {
+    color: var(--color-text-muted);
+    font-size: var(--fs-small);
+    max-width: none;
+  }
+</style>

@@ -1,0 +1,81 @@
+---
+import type { CoverageType } from '../data/coverageTypes';
+
+type Props = CoverageType;
+
+const { title, eyebrow, description, href } = Astro.props;
+---
+
+<a class="type-card" href={href}>
+  <span class="type-card__eyebrow">{eyebrow}</span>
+  <h3 class="type-card__title">{title}</h3>
+  <p class="type-card__desc">{description}</p>
+  <span class="type-card__link" aria-hidden="true">
+    Learn more
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</a>
+
+<style>
+  .type-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    height: 100%;
+    transition:
+      border-color var(--duration-base) var(--ease-out),
+      box-shadow var(--duration-base) var(--ease-out),
+      transform var(--duration-base) var(--ease-out);
+  }
+
+  .type-card:hover {
+    border-color: var(--color-teal);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .type-card__eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .type-card__title {
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .type-card__desc {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: var(--lh-body);
+    flex: 1;
+    max-width: none;
+  }
+
+  .type-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--fs-small);
+    font-weight: 600;
+    color: var(--color-teal-dark);
+  }
+
+  .type-card__link svg {
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  .type-card:hover .type-card__link svg {
+    transform: translateX(3px);
+  }
+</style>

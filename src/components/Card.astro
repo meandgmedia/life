@@ -1,0 +1,98 @@
+---
+// Generic content card — the base every specialized card (ProductCard,
+// InsuranceTypeCard, BlogCard) will build on in later phases.
+// Usage:
+//   <Card eyebrow="Coverage" title="Term Life Insurance" href="/term-life-insurance/">
+//     Affordable, temporary protection for a specific period of time.
+//   </Card>
+type Props = {
+  title: string;
+  eyebrow?: string;
+  href?: string;
+};
+
+const { title, eyebrow, href } = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag class="card" href={href}>
+  {eyebrow && <span class="card__eyebrow">{eyebrow}</span>}
+  <h3 class="card__title">{title}</h3>
+  <div class="card__body">
+    <slot />
+  </div>
+  {href && (
+    <span class="card__link" aria-hidden="true">
+      Learn more
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  )}
+</Tag>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    height: 100%;
+    transition:
+      border-color var(--duration-base) var(--ease-out),
+      box-shadow var(--duration-base) var(--ease-out),
+      transform var(--duration-base) var(--ease-out);
+  }
+
+  a.card:hover {
+    border-color: var(--color-teal);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .card__eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--fs-eyebrow);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-teal-dark);
+    font-weight: 600;
+  }
+
+  .card__title {
+    font-size: 1.15rem;
+    margin: 0;
+  }
+
+  .card__body {
+    color: var(--color-text-muted);
+    font-size: var(--fs-small);
+    line-height: var(--lh-body);
+    flex: 1;
+  }
+
+  .card__body :global(p) {
+    max-width: none;
+  }
+
+  .card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--fs-small);
+    font-weight: 600;
+    color: var(--color-teal-dark);
+    margin-top: var(--space-1);
+  }
+
+  .card__link svg {
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  a.card:hover .card__link svg {
+    transform: translateX(3px);
+  }
+</style>

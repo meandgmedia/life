@@ -1,0 +1,64 @@
+---
+// Usage:
+//   <HowItWorks steps={[{ title: 'Get Your Quote', description: '...' }, ...]} />
+type Step = {
+  title: string;
+  description: string;
+};
+
+type Props = {
+  steps: Step[];
+};
+
+const { steps } = Astro.props;
+---
+
+<ol class="how-it-works">
+  {steps.map((step, i) => (
+    <li class="how-it-works__step">
+      <span class="how-it-works__index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+      <h3>{step.title}</h3>
+      <p>{step.description}</p>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .how-it-works {
+    display: grid;
+    gap: var(--space-6);
+    counter-reset: step;
+  }
+
+  @media (min-width: 900px) {
+    .how-it-works {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-7);
+    }
+  }
+
+  .how-it-works__step {
+    position: relative;
+    padding-top: var(--space-6);
+    border-top: 2px solid var(--color-border-strong);
+  }
+
+  .how-it-works__index {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--fs-eyebrow);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--color-coral);
+    margin-bottom: var(--space-3);
+  }
+
+  .how-it-works__step h3 {
+    margin-bottom: var(--space-2);
+  }
+
+  .how-it-works__step p {
+    color: var(--color-text-muted);
+    font-size: var(--fs-small);
+  }
+</style>

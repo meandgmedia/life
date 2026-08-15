@@ -1,0 +1,44 @@
+---
+import Button from './Button.astro';
+
+type Props = {
+  title?: string;
+  lead?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+};
+
+const {
+  title = 'Ready to Explore Your Life Insurance Options?',
+  lead = 'Get a personalized quote and see what coverage options may be available to you.',
+  ctaLabel = 'Get My Free Quote',
+  ctaHref = '/get-a-quote/',
+} = Astro.props;
+---
+
+<section class="section section--ink cta-band">
+  <div class="container cta-band__inner">
+    <h2>{title}</h2>
+    <p class="lead">{lead}</p>
+    <div class="cta-band__action">
+      <Button href={ctaHref} variant="primary" size="lg">{ctaLabel}</Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-band__inner {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .cta-band__inner .lead {
+    margin-inline: auto;
+    margin-top: var(--space-3);
+  }
+
+  .cta-band__action {
+    margin-top: var(--space-6);
+  }
+</style>

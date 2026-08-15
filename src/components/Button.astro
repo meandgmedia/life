@@ -1,0 +1,116 @@
+---
+// Usage:
+//   <Button href="/get-a-quote/" variant="primary">Get My Free Quote</Button>
+//   <Button href="/life-insurance/" variant="secondary">Explore Life Insurance</Button>
+//   <Button type="submit" variant="primary">Send Message</Button>
+type Props = {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'md' | 'lg';
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+  ariaLabel?: string;
+};
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  type = 'button',
+  class: className = '',
+  ariaLabel,
+} = Astro.props;
+
+const classes = ['btn', `btn--${variant}`, `btn--${size}`, className]
+  .filter(Boolean)
+  .join(' ');
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag
+  class={classes}
+  href={href}
+  type={href ? undefined : type}
+  aria-label={ariaLabel}
+>
+  <slot />
+</Tag>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-align: center;
+    border-radius: var(--radius-full);
+    border: 1.5px solid transparent;
+    transition:
+      background-color var(--duration-fast) var(--ease-out),
+      border-color var(--duration-fast) var(--ease-out),
+      color var(--duration-fast) var(--ease-out),
+      transform var(--duration-fast) var(--ease-out);
+    white-space: nowrap;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  /* Sizes */
+  .btn--md {
+    font-size: var(--fs-small);
+    padding: 0.7rem 1.35rem;
+  }
+
+  .btn--lg {
+    font-size: 1rem;
+    padding: 0.95rem 1.85rem;
+  }
+
+  /* Variants */
+  .btn--primary {
+    background: var(--color-coral);
+    color: var(--color-white);
+    border-color: var(--color-coral);
+  }
+
+  .btn--primary:hover {
+    background: var(--color-coral-dark);
+    border-color: var(--color-coral-dark);
+  }
+
+  .btn--secondary {
+    background: transparent;
+    color: var(--color-ink);
+    border-color: var(--color-border-strong);
+  }
+
+  .btn--secondary:hover {
+    border-color: var(--color-ink);
+    background: var(--color-ink-tint);
+  }
+
+  .section--ink .btn--secondary {
+    color: var(--color-white);
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+
+  .section--ink .btn--secondary:hover {
+    border-color: var(--color-white);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .btn--ghost {
+    background: transparent;
+    color: var(--color-teal-dark);
+    border-color: transparent;
+    padding-inline: 0.25rem;
+  }
+
+  .btn--ghost:hover {
+    color: var(--color-teal);
+  }
+</style>

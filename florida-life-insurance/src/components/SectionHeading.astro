@@ -1,0 +1,41 @@
+---
+// Usage:
+//   <SectionHeading eyebrow="How It Works" title="Three steps to coverage" align="center" />
+type Props = {
+  eyebrow?: string;
+  title: string;
+  lead?: string;
+  align?: 'left' | 'center';
+};
+
+const { eyebrow, title, lead, align = 'left' } = Astro.props;
+---
+
+<div class={`section-heading section-heading--${align}`}>
+  {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+  <h2>{title}</h2>
+  {lead && <p class="lead">{lead}</p>}
+</div>
+
+<style>
+  .section-heading {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    max-width: 640px;
+  }
+
+  .section-heading--center {
+    margin-inline: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .section-heading .lead {
+    margin-top: var(--space-1);
+  }
+
+  .section-heading--center .lead {
+    margin-inline: auto;
+  }
+</style>

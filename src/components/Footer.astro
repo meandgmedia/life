@@ -1,0 +1,156 @@
+---
+import { footerColumns, footerLegal } from '../data/nav';
+import { SITE } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__top">
+    <div class="site-footer__brand">
+      <span class="site-footer__wordmark">Florida Life Insurance</span>
+      <p class="site-footer__tagline">{SITE.tagline}</p>
+      <a class="site-footer__cta" href="/get-a-quote/">Get a Free Quote →</a>
+    </div>
+
+    <div class="site-footer__columns">
+      {footerColumns.map((col) => (
+        <div class="site-footer__col">
+          <h2 class="site-footer__heading">{col.heading}</h2>
+          <ul>
+            {col.links.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="container site-footer__disclosure">
+    <p>
+      {SITE.legalBusinessName} is a licensed insurance agency in the state of Florida
+      (License {SITE.floridaLicenseNumber}). Not all applicants will qualify for every
+      product, coverage amount, or premium shown. Product availability, underwriting
+      requirements, and pricing vary by carrier and are subject to eligibility.
+      This website is not affiliated with or endorsed by any government agency.
+    </p>
+  </div>
+
+  <div class="container site-footer__bottom">
+    <p>&copy; {year} {SITE.name}. All rights reserved.</p>
+    <ul class="site-footer__legal">
+      {footerLegal.map((link) => (
+        <li><a href={link.href}>{link.label}</a></li>
+      ))}
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-ink);
+    color: var(--color-text-inverse-muted);
+  }
+
+  .site-footer__top {
+    display: grid;
+    gap: var(--space-8);
+    padding-block: var(--space-9) var(--space-7);
+  }
+
+  @media (min-width: 900px) {
+    .site-footer__top {
+      grid-template-columns: 1.1fr 2fr;
+    }
+  }
+
+  .site-footer__wordmark {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-white);
+  }
+
+  .site-footer__tagline {
+    margin-top: var(--space-2);
+    max-width: 32ch;
+    color: var(--color-text-inverse-muted);
+  }
+
+  .site-footer__cta {
+    display: inline-block;
+    margin-top: var(--space-5);
+    font-weight: 600;
+    color: #6fd9d9;
+  }
+
+  .site-footer__cta:hover {
+    color: var(--color-teal);
+  }
+
+  .site-footer__columns {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer__heading {
+    font-family: var(--font-mono);
+    font-size: var(--fs-eyebrow);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-white);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+  }
+
+  .site-footer__col ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .site-footer__col a {
+    font-size: var(--fs-small);
+    color: var(--color-text-inverse-muted);
+  }
+
+  .site-footer__col a:hover {
+    color: var(--color-white);
+  }
+
+  .site-footer__disclosure {
+    padding-block: var(--space-6);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .site-footer__disclosure p {
+    max-width: none;
+    font-size: 0.8125rem;
+    line-height: var(--lh-body);
+    color: rgba(185, 198, 218, 0.75);
+  }
+
+  .site-footer__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: space-between;
+    align-items: center;
+    padding-block: var(--space-5);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: var(--fs-small);
+  }
+
+  .site-footer__legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+  }
+
+  .site-footer__legal a:hover {
+    color: var(--color-white);
+  }
+</style>
