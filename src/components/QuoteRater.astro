@@ -1,20 +1,17 @@
 ---
 // ============================================================================
 // QuoteRater.astro
-// Reusable container for the BackNine Insurance Quote & Apply embed.
+// Container for the live BackNine ("Strife") Quote & Apply embed.
 //
-// HOW TO ADD THE REAL EMBED (drop-in, no other changes needed):
-//   1. Delete the <div class="quote-rater__skeleton">...</div> block below.
-//   2. Paste your real BackNine embed code (script tag + widget container,
-//      iframe, or div — whatever BackNine gives you) in its place, between
-//      the BACKNINE EMBED START / END comments.
-//   3. That's it. The card, border, shadow, spacing, and responsive sizing
-//      around it are already built and already match the rest of the site —
-//      you don't need to touch this component's markup or styles.
-//
-// This component can be reused anywhere a quote experience is needed later
-// (homepage, final expense page, term/whole life pages) — just drop
-// <QuoteRater /> in and the same embed renders inside matching styling.
+// IMPORTANT — this component renders the vendor's exact snippet, including
+// its fixed element IDs (id="container-id" and id="strife" on the script
+// tag). BackNine's widget script targets those IDs directly, so:
+//   - Don't render <QuoteRater /> more than once on the same page — a
+//     second copy would duplicate those IDs and the widget will not
+//     initialize twice correctly.
+//   - It's fine to use <QuoteRater /> once each on multiple different
+//     pages (e.g. once on the homepage, once on /get-a-quote/) — each page
+//     load only ever has one copy in its own DOM.
 // ============================================================================
 type Props = {
   /** Optional small label above the embed, e.g. "Step 1 of 2". Omit if not needed. */
@@ -28,16 +25,13 @@ const { label } = Astro.props;
   {label && <p class="quote-rater__label">{label}</p>}
 
   <!-- BACKNINE EMBED START -->
-  <div class="quote-rater__skeleton" role="status" aria-live="polite">
-    <span class="visually-hidden">Loading your quote experience…</span>
-    <div class="quote-rater__skeleton-bar quote-rater__skeleton-bar--wide" aria-hidden="true"></div>
-    <div class="quote-rater__skeleton-row" aria-hidden="true">
-      <div class="quote-rater__skeleton-bar"></div>
-      <div class="quote-rater__skeleton-bar"></div>
-    </div>
-    <div class="quote-rater__skeleton-bar quote-rater__skeleton-bar--wide" aria-hidden="true"></div>
-    <div class="quote-rater__skeleton-button" aria-hidden="true"></div>
-  </div>
+  <div id="container-id"></div>
+  <script
+    is:inline
+    id="strife"
+    src="https://cdn.quoteandapply.io/widget.js"
+    data-strife-key="4Aa0Ad1Np-TT7xVC"
+    data-strife-container-id="container-id"></script>
   <!-- BACKNINE EMBED END -->
 </div>
 
@@ -59,69 +53,5 @@ const { label } = Astro.props;
     color: var(--color-teal-dark);
     font-weight: 600;
     margin-bottom: var(--space-5);
-  }
-
-  /* Skeleton loader — stands in for the embed so the page never looks
-     unfinished. Replace this block per the instructions above. */
-  .quote-rater__skeleton {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-5);
-    max-width: 520px;
-    margin-inline: auto;
-    padding-block: var(--space-6);
-  }
-
-  .quote-rater__skeleton-bar,
-  .quote-rater__skeleton-button {
-    border-radius: var(--radius-sm);
-    background: linear-gradient(
-      100deg,
-      var(--color-cloud) 30%,
-      var(--color-ink-tint) 50%,
-      var(--color-cloud) 70%
-    );
-    background-size: 200% 100%;
-    animation: quote-rater-shimmer 1.8s ease-in-out infinite;
-  }
-
-  .quote-rater__skeleton-bar {
-    height: 3rem;
-  }
-
-  .quote-rater__skeleton-bar--wide {
-    height: 3.5rem;
-  }
-
-  .quote-rater__skeleton-row {
-    display: flex;
-    gap: var(--space-4);
-  }
-
-  .quote-rater__skeleton-row .quote-rater__skeleton-bar {
-    flex: 1;
-  }
-
-  .quote-rater__skeleton-button {
-    height: 3.25rem;
-    border-radius: var(--radius-full);
-    margin-top: var(--space-2);
-  }
-
-  @keyframes quote-rater-shimmer {
-    0% {
-      background-position: 200% 0;
-    }
-    100% {
-      background-position: -200% 0;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .quote-rater__skeleton-bar,
-    .quote-rater__skeleton-button {
-      animation: none;
-      background: var(--color-cloud);
-    }
   }
 </style>

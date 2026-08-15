@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import QuoteRater from '../components/QuoteRater.astro';
 import HowItWorks from '../components/HowItWorks.astro';
 import InsuranceTypeCard from '../components/InsuranceTypeCard.astro';
 import TrustSection from '../components/TrustSection.astro';
@@ -102,6 +103,27 @@ const trustPoints = [
         <div class="quote-mock__cta">See My Options</div>
         <div class="quote-mock__footnote">Estimated options &middot; no obligation</div>
       </div>
+    </div>
+  </section>
+
+  <!-- LIVE QUOTE -->
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading
+        eyebrow="Get a Quote"
+        title="See your options in minutes"
+        lead="Answer a few questions to compare the life insurance coverage available to you \u2014 no obligation."
+        align="center"
+      />
+      <div style="margin-top: var(--space-8);">
+        <QuoteRater />
+      </div>
+      <p class="quote-disclosure">
+        Coverage is subject to eligibility and underwriting. Product
+        availability and pricing vary by carrier and applicant. Some
+        policies may be issued quickly depending on eligibility and carrier
+        underwriting.
+      </p>
     </div>
   </section>
 
@@ -333,6 +355,14 @@ const trustPoints = [
     text-align: center;
     margin-top: var(--space-3);
     font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .quote-disclosure {
+    max-width: none;
+    margin-top: var(--space-5);
+    text-align: center;
+    font-size: 0.8125rem;
     color: var(--color-text-muted);
   }
 
