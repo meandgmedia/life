@@ -1,6 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30">
-  <rect width="30" height="30" rx="7" fill="#0E2238"/>
-  <path d="M5 18C7 15.5 9 15.5 11 18C13 20.5 15 20.5 17 18C19 15.5 21 15.5 23 18C24 19.2 25 19.5 25 19.5" stroke="#FF5B35" stroke-width="2" stroke-linecap="round" fill="none"/>
-  <!-- Note: favicon.svg is rasterized by browsers without CSS var support, so it keeps a literal hex value. -->
-  <path d="M5 12.5C7 10 9 10 11 12.5C13 15 15 15 17 12.5C19 10 21 10 23 12.5C24 13.7 25 14 25 14" stroke="#0FA3A3" stroke-width="2" stroke-linecap="round" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" rx="28" fill="#0E2238"></rect>
+  <g stroke="#F4F2EE" stroke-width="10" stroke-linecap="round">
+    <line x1="64" y1="108" x2="64" y2="40"></line>
+    <line x1="64" y1="20" x2="64" y2="88"></line>
+    <line x1="108" y1="64" x2="88" y2="64"></line>
+    <line x1="20" y1="64" x2="40" y2="64"></line>
+    <line x1="95.1" y1="95.1" x2="47.0" y2="47.0"></line>
+    <line x1="32.9" y1="32.9" x2="81.0" y2="81.0"></line>
+    <line x1="32.9" y1="95.1" x2="81.0" y2="47.0"></line>
+    <line x1="95.1" y1="32.9" x2="47.0" y2="81.0"></line>
+  </g>
+  <circle cx="64" cy="64" r="20" fill="#E2732A"></circle>
 </svg>

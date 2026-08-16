@@ -8,12 +8,13 @@ import { SITE } from '../data/site';
 <header class="site-header">
   <div class="container site-header__inner">
     <a href="/" class="site-header__logo" aria-label={`${SITE.name} — Home`}>
-      <svg class="site-header__mark" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="30" height="30" rx="9" fill="#0E2238"/>
-        <path d="M5 18C7 15.5 9 15.5 11 18C13 20.5 15 20.5 17 18C19 15.5 21 15.5 23 18C24 19.2 25 19.5 25 19.5" stroke="var(--color-coral-bright)" stroke-width="2" stroke-linecap="round"/>
-        <path d="M5 12.5C7 10 9 10 11 12.5C13 15 15 15 17 12.5C19 10 21 10 23 12.5C24 13.7 25 14 25 14" stroke="#0FA3A3" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <span class="site-header__wordmark">Florida Life Insurance</span>
+      <img
+        class="site-header__logo-img"
+        src="/logo-horizontal.svg"
+        alt={SITE.name}
+        width="560"
+        height="128"
+      />
     </a>
 
     <Nav />
@@ -51,21 +52,19 @@ import { SITE } from '../data/site';
   .site-header__logo {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-3);
     flex-shrink: 0;
   }
 
-  .site-header__mark {
-    flex-shrink: 0;
+  .site-header__logo-img {
+    display: block;
+    height: 34px;
+    width: auto;
   }
 
-  .site-header__wordmark {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.05rem;
-    color: var(--color-ink);
-    letter-spacing: -0.01em;
-    white-space: nowrap;
+  @media (min-width: 480px) {
+    .site-header__logo-img {
+      height: 38px;
+    }
   }
 
   .site-header__actions {
