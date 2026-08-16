@@ -78,7 +78,7 @@
   /* Layout */
   --container-max: 1200px;
   --container-pad: clamp(1.25rem, 4vw, 2.5rem);
-  --header-height: 76px;
+  --header-height: 104px;
 
   /* Motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);

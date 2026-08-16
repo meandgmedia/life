@@ -8,7 +8,15 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="container site-footer__top">
     <div class="site-footer__brand">
-      <span class="site-footer__wordmark">Florida Life Insurance</span>
+      <a href="/" class="site-footer__logo-link" aria-label={`${SITE.name} — Home`}>
+        <img
+          class="site-footer__logo-img"
+          src="/logo-horizontal.svg"
+          alt={SITE.name}
+          width="560"
+          height="128"
+        />
+      </a>
       <p class="site-footer__tagline">{SITE.tagline}</p>
       <a class="site-footer__cta" href="/get-a-quote/">Get a Free Quote →</a>
     </div>
@@ -49,8 +57,9 @@ const year = new Date().getFullYear();
 
 <style>
   .site-footer {
-    background: var(--color-ink);
-    color: var(--color-text-inverse-muted);
+    background: var(--color-white);
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
   }
 
   .site-footer__top {
@@ -65,25 +74,27 @@ const year = new Date().getFullYear();
     }
   }
 
-  .site-footer__wordmark {
+  .site-footer__logo-link {
+    display: inline-block;
+  }
+
+  .site-footer__logo-img {
     display: block;
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-white);
+    height: 56px;
+    width: auto;
   }
 
   .site-footer__tagline {
-    margin-top: var(--space-2);
+    margin-top: var(--space-4);
     max-width: 32ch;
-    color: var(--color-text-inverse-muted);
+    color: var(--color-text-muted);
   }
 
   .site-footer__cta {
     display: inline-block;
     margin-top: var(--space-5);
     font-weight: 600;
-    color: #6fd9d9;
+    color: var(--color-teal-dark);
   }
 
   .site-footer__cta:hover {
@@ -101,7 +112,7 @@ const year = new Date().getFullYear();
     font-size: var(--fs-eyebrow);
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--color-white);
+    color: var(--color-ink);
     font-weight: 600;
     margin-bottom: var(--space-4);
   }
@@ -114,23 +125,23 @@ const year = new Date().getFullYear();
 
   .site-footer__col a {
     font-size: var(--fs-small);
-    color: var(--color-text-inverse-muted);
+    color: var(--color-text-muted);
   }
 
   .site-footer__col a:hover {
-    color: var(--color-white);
+    color: var(--color-ink);
   }
 
   .site-footer__disclosure {
     padding-block: var(--space-6);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid var(--color-border);
   }
 
   .site-footer__disclosure p {
     max-width: none;
     font-size: 0.8125rem;
     line-height: var(--lh-body);
-    color: rgba(185, 198, 218, 0.75);
+    color: var(--color-text-muted);
   }
 
   .site-footer__bottom {
@@ -140,17 +151,11 @@ const year = new Date().getFullYear();
     justify-content: space-between;
     align-items: center;
     padding-block: var(--space-5);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid var(--color-border);
     font-size: var(--fs-small);
   }
 
-  .site-footer__legal {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-5);
-  }
-
   .site-footer__legal a:hover {
-    color: var(--color-white);
+    color: var(--color-ink);
   }
 </style>
