@@ -1,6 +1,7 @@
 ---
 import ProductLayout from '../layouts/ProductLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import InlineCTA from '../components/InlineCTA.astro';
 import FAQ from '../components/FAQ.astro';
 
 const faqItems = [
@@ -12,7 +13,7 @@ const faqItems = [
   {
     question: 'Is no-medical-exam coverage more expensive?',
     answer:
-      'It can be, since the carrier is taking on more uncertainty without exam results. That isn\u2019t true in every case, though \u2014 the best way to know is to compare a personalized quote against fully underwritten options.',
+      'It can be, since the carrier is taking on more uncertainty without exam results. That isn\u2019t true in every case, though — the best way to know is to compare a personalized quote against fully underwritten options.',
   },
   {
     question: 'Are coverage amounts lower for no-exam policies?',
@@ -23,6 +24,16 @@ const faqItems = [
     question: 'Who typically considers no-medical-exam coverage?',
     answer:
       'People who want a faster application process, have a health condition that could complicate a traditional exam, or are shopping specifically for smaller, final-expense-style coverage.',
+  },
+  {
+    question: 'How fast is the application process?',
+    answer:
+      'It varies by product, but simplified issue and guaranteed issue policies are often designed to be approved faster than fully underwritten coverage — in some cases within days rather than weeks, since there\u2019s no exam scheduling or lab results to wait on. Accelerated underwriting programs can sometimes approve eligible applicants even faster using existing records.',
+  },
+  {
+    question: 'Will I need to answer any questions at all?',
+    answer:
+      'It depends on the product. Simplified issue policies ask a limited set of health questions. Guaranteed issue policies typically ask none, relying on age limits and a graded death benefit period instead. Fully underwritten policies ask the most detailed questions and usually include an exam.',
   },
 ];
 ---
@@ -50,7 +61,7 @@ const faqItems = [
           products, no health assessment at all.
         </p>
         <p>
-          This isn't one single product \u2014 it's a category that spans
+          This isn't one single product — it's a category that spans
           several underwriting approaches, each with different trade-offs
           around coverage amount, pricing, and how quickly a decision is
           made.
@@ -64,18 +75,83 @@ const faqItems = [
       <SectionHeading eyebrow="Underwriting Types" title="Common no-exam approaches" />
       <ul class="check-list" style="margin-top: var(--space-6);">
         <li>
-          <strong>Simplified issue</strong> \u2014 a short set of health
+          <strong>Simplified issue</strong> — a short set of health
           questions, no medical exam
         </li>
         <li>
-          <strong>Accelerated underwriting</strong> \u2014 uses records and data
+          <strong>Accelerated underwriting</strong> — uses records and data
           instead of an exam for eligible applicants
         </li>
         <li>
-          <strong>Guaranteed issue</strong> \u2014 typically no health questions,
+          <strong>Guaranteed issue</strong> — typically no health questions,
           often with lower coverage limits
         </li>
       </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Who Qualifies" title="Who tends to qualify for no-exam coverage" />
+      <div class="prose">
+        <p>
+          Eligibility depends heavily on which underwriting path you're
+          looking at. Simplified issue and accelerated underwriting
+          products are generally aimed at applicants in reasonably good
+          health who simply want to skip the exam — the health questions
+          still matter, and certain conditions can affect approval or
+          pricing. Guaranteed issue exists specifically for applicants who
+          may not qualify through those paths at all, which is why it
+          doesn't ask health questions in the first place, and instead
+          manages risk through age limits and a graded benefit period.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Trade-offs" title="What to weigh before choosing no-exam coverage" />
+      <ul class="check-list" style="margin-top: var(--space-6);">
+        <li>Coverage amounts are often lower than fully underwritten policies, especially for guaranteed issue.</li>
+        <li>Pricing can be higher for the same death benefit, since the carrier has less health information.</li>
+        <li>Approval is often faster, with less paperwork and no exam to schedule.</li>
+        <li>Simplified and guaranteed issue options can be a practical fallback if you don't qualify for — or don't want to wait for — a fully underwritten policy.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Comparing Options" title="No-exam options, side by side" />
+      <div class="prose" style="margin-bottom: var(--space-5);">
+        <p>
+          It helps to see the three main no-exam paths next to each other:
+        </p>
+      </div>
+      <ul class="check-list">
+        <li><strong>Simplified issue</strong> — health questions, no exam; generally the best pricing and highest coverage limits of the three.</li>
+        <li><strong>Accelerated underwriting</strong> — uses existing records instead of an exam; can be fast, but not every applicant qualifies for this path.</li>
+        <li><strong>Guaranteed issue</strong> — no health questions at all; the most accessible option, typically with the lowest coverage limits and a graded death benefit period.</li>
+      </ul>
+      <div class="prose" style="margin-top: var(--space-6);">
+        <p>
+          Most people are better served starting with simplified issue or
+          accelerated underwriting if they think they'd qualify, and using
+          guaranteed issue as the fallback if health conditions rule out
+          the other two. A licensed agent can help you figure out which
+          category you're likely to fit into before you apply.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <InlineCTA
+        title="Compare no medical exam options"
+        text="See what coverage may be available without a traditional exam."
+      />
     </div>
   </section>
 

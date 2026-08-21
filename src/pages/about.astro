@@ -12,7 +12,7 @@ const aboutPoints = [
   },
   {
     title: 'Transparent Information',
-    description: 'Plain-language explanations of how coverage, underwriting, and pricing actually work \u2014 not just marketing language.',
+    description: 'Plain-language explanations of how coverage, underwriting, and pricing actually work — not just marketing language.',
   },
   {
     title: 'Online Convenience',
@@ -24,18 +24,18 @@ const aboutPoints = [
   },
   {
     title: 'No-Pressure Comparison',
-    description: 'Requesting a quote doesn\u2019t obligate you to apply. Take the time you need to compare options.',
+    description: 'Requesting a quote doesn’t obligate you to apply. Take the time you need to compare options.',
   },
   {
-    title: 'Educational Resources',
-    description: 'Guides on the basics \u2014 coverage types, cost factors, and underwriting \u2014 so you can shop with confidence.',
+    title: 'A Direct Line to a Licensed Agent',
+    description: 'Questions go to a real, licensed Florida agent — not a call center script.',
   },
 ];
 ---
 
 <BaseLayout
   title="About Florida Life Insurance"
-  description="Florida Life Insurance helps Florida residents understand their life insurance options, compare coverage, and get a personalized quote online."
+  description={`Florida Life Insurance is run by ${SITE.agentName}, a Florida resident licensed insurance agent. Learn how coverage, quotes, and applications work.`}
   path="/about/"
 >
   <section class="section--tight section">
@@ -52,49 +52,78 @@ const aboutPoints = [
 
   <section class="section section--cloud">
     <div class="container container--narrow">
-      <SectionHeading eyebrow="What We Do" title="Helping Floridians compare life insurance online" />
+      <SectionHeading eyebrow="Who's Behind This Site" title={`Hi, I'm ${SITE.agentName}`} />
       <div class="prose">
         <p>
-          We help Florida residents understand their life insurance options
-          and compare coverage \u2014 term, whole, universal, final expense, and
-          more \u2014 in one place, online. Rather than starting with a single
-          product or a single carrier, our goal is to help you see the range
-          of options available so you can make an informed decision about
-          what fits your needs and budget.
+          I'm a Florida resident licensed insurance agent ({SITE.agentLicense}),
+          and I built Florida Life Insurance to give Florida residents a
+          clearer, more direct way to shop for life insurance — term, whole,
+          universal, final expense, and more — in one place, online, rather
+          than starting the process with a single product or a single
+          carrier's pitch.
         </p>
         <p>
-          Requesting a quote through our site doesn't obligate you to apply
-          for coverage. You can compare options, ask questions, and take the
-          time you need before deciding whether \u2014 and how \u2014 to move
-          forward.
+          When you request a quote through this site, it comes to me
+          directly. You're not filling out a form that gets routed to a call
+          center or sold off to a list of agents — you're working with one
+          licensed Florida agent who can walk you through your options,
+          answer questions honestly, and help you compare what's actually
+          available for your situation.
         </p>
       </div>
     </div>
   </section>
 
   <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="How I Work" title="What working with me looks like" />
+      <div class="prose">
+        <p>
+          Requesting a quote through this site doesn't obligate you to
+          apply for coverage. You can compare options, ask questions, and
+          take the time you need before deciding whether — and how — to
+          move forward. My goal is to help you understand what you're
+          actually buying, not to push you toward the largest policy or the
+          fastest close.
+        </p>
+        <p>
+          That means being upfront about trade-offs — where a simplified or
+          guaranteed issue product makes more sense than a fully
+          underwritten one, where term coverage fits better than permanent,
+          and where a smaller final expense policy might be a smarter
+          starting point than a large policy you'd struggle to keep paying
+          for. Product availability, coverage amounts, and pricing vary by
+          carrier and are subject to eligibility and underwriting — I'll
+          walk you through what that means for your specific situation
+          rather than leaving you to guess.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
     <div class="container">
-      <SectionHeading eyebrow="Our Approach" title="What matters to us" align="center" />
+      <SectionHeading eyebrow="Our Approach" title="What matters to me" align="center" />
       <div style="margin-top: var(--space-8);">
         <TrustSection points={aboutPoints} />
       </div>
     </div>
   </section>
 
-  <section class="section section--cloud">
+  <section class="section">
     <div class="container container--narrow">
       <SectionHeading eyebrow="Licensing" title="Licensed to serve Florida residents" />
       <div class="prose">
         <p>
-          {SITE.legalBusinessName} is a licensed insurance agency in the
-          state of Florida (License {SITE.floridaLicenseNumber}). Product
-          availability, coverage amounts, and pricing vary by carrier and
-          are subject to eligibility and underwriting. Not all applicants
-          will qualify for every product shown on this site.
+          {SITE.name} is operated by {SITE.agentName}, a licensed
+          insurance agent in the state of Florida ({SITE.agentLicense}).
+          Product availability, coverage amounts, and pricing vary by
+          carrier and are subject to eligibility and underwriting. Not all
+          applicants will qualify for every product shown on this site.
         </p>
         <p>
-          Have a question before you get started? <a href="/contact/">Contact us</a>{' '}
-          or head straight to <a href="/get-a-quote/">get a free quote</a>.
+          Have a question before you get started? <a href="/contact/">Contact me</a>{' '}
+          directly, or head straight to <a href="/get-a-quote/">get a free quote</a>.
         </p>
       </div>
     </div>

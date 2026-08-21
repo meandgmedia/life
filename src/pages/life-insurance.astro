@@ -2,6 +2,7 @@
 import ProductLayout from '../layouts/ProductLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import InsuranceTypeCard from '../components/InsuranceTypeCard.astro';
+import InlineCTA from '../components/InlineCTA.astro';
 import FAQ from '../components/FAQ.astro';
 import { coverageTypes } from '../data/coverageTypes';
 
@@ -9,7 +10,7 @@ const faqItems = [
   {
     question: 'How much life insurance do I need?',
     answer:
-      'It depends on your situation \u2014 things like income you\u2019d want replaced, outstanding debt (such as a mortgage), future expenses like education, and any final expenses you\u2019d want covered. Many people start by adding up these categories, then compare that estimate against what different coverage amounts cost.',
+      'It depends on your situation — things like income you’d want replaced, outstanding debt (such as a mortgage), future expenses like education, and any final expenses you’d want covered. Many people start by adding up these categories, then compare that estimate against what different coverage amounts cost.',
   },
   {
     question: 'What determines the cost of a life insurance policy?',
@@ -19,19 +20,29 @@ const faqItems = [
   {
     question: 'Do I need a medical exam to qualify?',
     answer:
-      'Not always. Fully underwritten policies often involve a medical exam, while simplified issue and guaranteed issue products typically do not \u2014 though they may have lower coverage limits or different pricing as a trade-off.',
+      'Not always. Fully underwritten policies often involve a medical exam, while simplified issue and guaranteed issue products typically do not — though they may have lower coverage limits or different pricing as a trade-off.',
   },
   {
     question: 'Can I have more than one life insurance policy?',
     answer:
-      'Yes, many people combine policies \u2014 for example, a larger term policy for income replacement alongside a smaller final expense policy \u2014 though eligibility and total coverage limits vary by carrier.',
+      'Yes, many people combine policies — for example, a larger term policy for income replacement alongside a smaller final expense policy — though eligibility and total coverage limits vary by carrier.',
+  },
+  {
+    question: 'What happens if I stop paying my premium?',
+    answer:
+      'For term policies, coverage typically ends once premiums stop, sometimes after a short grace period. For permanent policies with cash value, you may have options like using the cash value to keep the policy in force for a period of time. Specific terms vary by carrier and product, so it’s worth understanding your policy’s grace period and lapse provisions.',
+  },
+  {
+    question: 'Can I change or cancel my policy later?',
+    answer:
+      'Most life insurance policies can be cancelled at any time, though you may lose any premiums paid and, for permanent policies, some of the accumulated cash value depending on when you cancel. Some term policies also include a conversion option that allows you to switch to permanent coverage without new health questions. Review your specific policy for the terms that apply.',
   },
 ];
 ---
 
 <ProductLayout
   title="Florida Life Insurance | Compare Coverage Options"
-  description="Compare the main types of life insurance available to Florida residents \u2014 term, whole, universal, final expense, and more \u2014 and find coverage that fits your needs."
+  description="Compare the main types of life insurance available to Florida residents — term, whole, universal, final expense, and more — and find coverage that fits your needs."
   path="/life-insurance/"
   eyebrow="Florida &middot; Life Insurance"
   h1="Life Insurance in Florida"
@@ -48,7 +59,7 @@ const faqItems = [
           exchange for premium payments, the carrier agrees to pay a death
           benefit to your named beneficiaries if you pass away while the
           policy is active. That benefit can be used for anything your
-          beneficiaries need \u2014 replacing lost income, paying off debt, covering
+          beneficiaries need — replacing lost income, paying off debt, covering
           a mortgage, funding education, or handling funeral and final
           expenses.
         </p>
@@ -57,7 +68,7 @@ const faqItems = [
           which covers you for a specific period of time, and{' '}
           <strong>permanent life insurance</strong> (whole and universal
           life), which is designed to last your entire lifetime and may build
-          cash value. Within those categories, underwriting can also vary \u2014
+          cash value. Within those categories, underwriting can also vary —
           from fully underwritten policies that involve a medical exam to
           simplified issue and guaranteed issue products designed for easier
           qualification.
@@ -66,7 +77,27 @@ const faqItems = [
     </div>
   </section>
 
-  <section id="coverage-types" class="section section--cloud">
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Why It Matters" title="Why Floridians buy life insurance" />
+      <div class="prose">
+        <p>
+          The reasons people buy coverage tend to fall into a few common
+          categories, and they often show up together rather than in
+          isolation:
+        </p>
+      </div>
+      <ul class="check-list" style="margin-top: var(--space-5);">
+        <li><strong>Protecting a mortgage</strong> — making sure a surviving spouse or family member isn’t left carrying a home payment alone.</li>
+        <li><strong>Replacing income</strong> — helping a household keep functioning financially if a primary earner’s income suddenly stopped.</li>
+        <li><strong>Planning for retirement and later life</strong> — Florida’s large retiree population often looks at coverage as part of broader end-of-life planning.</li>
+        <li><strong>Covering final expenses</strong> — funeral, burial, and cremation costs can be significant, and many people prefer to plan for them ahead of time.</li>
+        <li><strong>Business and estate planning</strong> — some business owners and families use life insurance for more specialized purposes, like funding a buy-sell agreement or supporting an estate plan.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="coverage-types" class="section">
     <div class="container">
       <SectionHeading
         eyebrow="Coverage Options"
@@ -81,24 +112,63 @@ const faqItems = [
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section--cloud">
     <div class="container container--narrow">
       <SectionHeading eyebrow="Getting Started" title="How much coverage do you need?" />
       <div class="prose">
         <p>
-          There's no single right answer \u2014 it depends on what you want the
+          There's no single right answer — it depends on what you want the
           policy to accomplish. Many people think through a few categories
-          when deciding on a coverage amount:
+          when deciding on a coverage amount, sometimes summarized as{' '}
+          <strong>debt, income, mortgage, and education</strong> — the major
+          financial responsibilities a policy might need to cover:
         </p>
       </div>
       <ul class="check-list" style="margin-top: var(--space-5);">
-        <li>Income your family would need replaced, and for how long</li>
-        <li>Outstanding debt, including a mortgage or other loans</li>
-        <li>Future expenses, like childcare or education</li>
-        <li>Final expenses \u2014 funeral, burial, or medical bills</li>
+        <li><strong>Debt</strong> — credit cards, car loans, and other balances that shouldn’t become a family’s burden.</li>
+        <li><strong>Income</strong> — how many years of income your family would need replaced, and what that adds up to.</li>
+        <li><strong>Mortgage</strong> — the remaining balance on a home loan, if paying it off is a priority.</li>
+        <li><strong>Education</strong> — future costs like childcare or college that a policy could help fund.</li>
+        <li><strong>Final expenses</strong> — funeral, burial, cremation, or medical bills at the end of life.</li>
       </ul>
 
-      <div class="prose" style="margin-top: var(--space-8);">
+      <div class="prose" style="margin-top: var(--space-7);">
+        <p>
+          Adding up the categories that apply to you gives many people a
+          starting point for comparing coverage amounts. It's not an exact
+          formula — it's a way to make sure you're not guessing at a round
+          number that doesn't actually reflect your situation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Underwriting" title="How life insurance underwriting works" />
+      <div class="prose">
+        <p>
+          Underwriting is the process a carrier uses to assess risk and
+          decide whether — and on what terms — to offer you coverage. It
+          looks different depending on the type of policy:
+        </p>
+      </div>
+      <ul class="check-list" style="margin-top: var(--space-5);">
+        <li><strong>Fully underwritten</strong> — typically involves a detailed health questionnaire, a review of your medical history, and often a medical exam. Usually offers the most competitive pricing for healthy applicants.</li>
+        <li><strong>Simplified issue</strong> — skips the medical exam in favor of a shorter set of health questions. Often used for final expense and smaller policies.</li>
+        <li><strong>Guaranteed issue</strong> — generally involves no health questions at all, within an eligible age range, though coverage amounts are usually smaller and may include a graded death benefit period.</li>
+        <li><strong>Accelerated underwriting</strong> — some carriers use data sources like prescription history instead of an exam for applicants who qualify, speeding up approval.</li>
+      </ul>
+
+      <div class="prose" style="margin-top: var(--space-7);">
+        <p>
+          Which underwriting path makes sense depends on your health, your
+          timeline, and how much coverage you're looking for. A licensed
+          agent can help you understand which option fits before you apply.
+        </p>
+      </div>
+
+      <div class="prose" style="margin-top: var(--space-6);">
         <h3>What affects the cost of a policy?</h3>
         <p>
           Pricing varies by carrier, but the most common factors are your age,
@@ -113,6 +183,12 @@ const faqItems = [
   </section>
 
   <section class="section section--cloud">
+    <div class="container container--narrow">
+      <InlineCTA />
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container container--narrow">
       <SectionHeading eyebrow="FAQ" title="Common life insurance questions" />
       <div style="margin-top: var(--space-7);">

@@ -7,66 +7,97 @@ import { SITE } from '../data/site';
   title="Privacy Policy"
   description="How Florida Life Insurance collects, uses, and protects information submitted through this website."
   path="/privacy-policy/"
-  noindex={true}
 >
   <section class="section--tight section">
     <div class="container container--narrow">
       <span class="eyebrow">Legal</span>
       <h1 style="margin-top: var(--space-4);">Privacy Policy</h1>
-      <p class="lead" style="margin-top: var(--space-4);">Last updated: [Date]</p>
-
-      <div class="legal-notice">
-        <strong>Draft placeholder.</strong> This page is a structural
-        starting point, not a finished legal document. It must be reviewed
-        and completed by a licensed attorney familiar with Florida and
-        federal privacy law (including any insurance-specific requirements)
-        before this site goes live.
-      </div>
+      <p class="lead" style="margin-top: var(--space-4);">Effective Date: August 21, 2026</p>
 
       <div class="prose">
+        <p>
+          This Privacy Policy explains how {SITE.name} ("we," "us," or
+          "our"), operated by {SITE.agentName} ({SITE.agentLicense}),
+          collects, uses, and protects information submitted through{' '}
+          {SITE.domain.replace('https://', '')} (the "Site").
+        </p>
+
         <h2>Information We Collect</h2>
         <p>
-          When you request a quote, submit the contact form, or otherwise
-          interact with this website, we may collect information you
-          provide directly — such as your name, contact information, date
-          of birth, ZIP code, and general health information — as well as
-          information collected automatically, such as browser type and
-          usage data. [Complete with your actual data collection practices.]
+          When you request a quote, submit our contact form, or otherwise
+          interact with the Site, we may collect information you provide
+          directly, such as your name, email address, phone number, date of
+          birth, ZIP code, coverage preferences, and general health
+          information relevant to a life insurance quote. We may also
+          collect standard technical information automatically, such as
+          browser type, device type, and pages visited, to help keep the
+          Site running properly and secure.
         </p>
 
         <h2>How We Use Information</h2>
         <p>
-          Information submitted through this site is generally used to
-          provide quotes, facilitate applications with insurance carriers,
-          respond to inquiries, and improve the website. [Complete with
-          your actual data use practices, including any marketing use.]
+          We use the information you provide to generate quotes, respond to
+          your inquiries, facilitate applications with insurance carriers,
+          and communicate with you about your request. We do not sell your
+          personal information to third parties.
         </p>
 
         <h2>Sharing With Third Parties</h2>
         <p>
-          Quote and application information may be shared with insurance
-          carriers, the BackNine quote and application platform, and other
-          service providers involved in processing your request.
-          [Complete with a full list of third parties and purposes.]
+          Quote and application information you submit is shared with the
+          BackNine ("Strife") quote and application platform embedded on
+          this Site, and with the insurance carrier(s) relevant to the
+          coverage you're requesting, so that a quote and application can be
+          processed. Contact form submissions are processed through
+          Web3Forms, a third-party form-delivery service, solely to deliver
+          your message to us. Each of these providers has its own privacy
+          practices governing the information it processes.
         </p>
 
-        <h2>Cookies and Tracking</h2>
+        <h2>Cookies and Similar Technologies</h2>
         <p>
-          [Describe any cookies, analytics, or advertising tracking
-          technologies used on this site, and how visitors can opt out.]
+          The Site itself does not use advertising or tracking cookies
+          beyond what is required for the Site and its embedded quote tool
+          to function. The BackNine quote widget embedded on this Site may
+          set its own cookies or use similar technologies as part of
+          delivering the quote experience; that use is governed by
+          BackNine's own privacy practices, not this policy.
+        </p>
+
+        <h2>Data Security</h2>
+        <p>
+          We take reasonable measures to protect information submitted
+          through the Site, including relying on reputable third-party
+          providers (BackNine, Web3Forms) for the technical handling of
+          quote and form submissions. No method of transmission or storage
+          is completely secure, and we cannot guarantee absolute security.
         </p>
 
         <h2>Your Choices</h2>
         <p>
-          [Describe how a visitor can access, correct, or request deletion
-          of their information, and any rights available under applicable
-          law.]
+          You can request access to, correction of, or deletion of
+          personal information you've submitted to us by contacting us
+          using the information below. We will respond to reasonable
+          requests consistent with our recordkeeping and legal obligations.
+        </p>
+
+        <h2>Children's Privacy</h2>
+        <p>
+          This Site is not directed to children under 13, and we do not
+          knowingly collect personal information from children under 13.
+        </p>
+
+        <h2>Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. The
+          "Effective Date" above reflects the most recent revision.
         </p>
 
         <h2>Contact Us</h2>
         <p>
           Questions about this policy can be sent to{' '}
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or through our{' '}
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>, by phone at{' '}
+          <a href={SITE.phoneHref}>{SITE.phoneDisplay}</a>, or through our{' '}
           <a href="/contact/">contact page</a>.
         </p>
       </div>
@@ -75,17 +106,6 @@ import { SITE } from '../data/site';
 </BaseLayout>
 
 <style>
-  .legal-notice {
-    margin-top: var(--space-7);
-    padding: var(--space-5) var(--space-6);
-    background: var(--color-coral-tint);
-    border: 1px solid rgba(201, 62, 29, 0.25);
-    border-radius: var(--radius-md);
-    color: var(--color-ink);
-    font-size: var(--fs-small);
-    max-width: 68ch;
-  }
-
   .prose {
     margin-top: var(--space-8);
     max-width: 68ch;
@@ -94,10 +114,6 @@ import { SITE } from '../data/site';
   .prose h2 {
     margin-top: var(--space-8);
     font-size: var(--fs-h3);
-  }
-
-  .prose h2:first-child {
-    margin-top: 0;
   }
 
   .prose p {

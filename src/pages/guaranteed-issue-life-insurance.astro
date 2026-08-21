@@ -1,18 +1,19 @@
 ---
 import ProductLayout from '../layouts/ProductLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import InlineCTA from '../components/InlineCTA.astro';
 import FAQ from '../components/FAQ.astro';
 
 const faqItems = [
   {
     question: 'Does "guaranteed issue" mean everyone is approved?',
     answer:
-      'It means that, within a specific age range, most applicants can qualify without answering health questions or taking a medical exam \u2014 not that every applicant, at every age, automatically receives coverage. Age limits and other eligibility rules still apply, and they vary by carrier and product.',
+      'It means that, within a specific age range, most applicants can qualify without answering health questions or taking a medical exam — not that every applicant, at every age, automatically receives coverage. Age limits and other eligibility rules still apply, and they vary by carrier and product.',
   },
   {
     question: 'What is a graded death benefit?',
     answer:
-      'Some guaranteed issue policies include a graded death benefit period \u2014 often the first two to three years \u2014 during which, if death occurs from natural causes, beneficiaries may receive a return of premiums paid plus interest rather than the full death benefit. Terms vary by carrier, and it\u2019s worth reviewing this detail closely before enrolling.',
+      'Some guaranteed issue policies include a graded death benefit period — often the first two to three years — during which, if death occurs from natural causes, beneficiaries may receive a return of premiums paid plus interest rather than the full death benefit. Terms vary by carrier, and it\u2019s worth reviewing this detail closely before enrolling.',
   },
   {
     question: 'Why would someone choose guaranteed issue over other options?',
@@ -22,7 +23,17 @@ const faqItems = [
   {
     question: 'Are coverage amounts smaller with guaranteed issue policies?',
     answer:
-      'Typically, yes. Because carriers take on more uncertainty by not asking health questions, guaranteed issue policies commonly offer smaller coverage amounts than simplified issue or fully underwritten products \u2014 which is part of why they\u2019re often used for final expense coverage.',
+      'Typically, yes. Because carriers take on more uncertainty by not asking health questions, guaranteed issue policies commonly offer smaller coverage amounts than simplified issue or fully underwritten products — which is part of why they\u2019re often used for final expense coverage.',
+  },
+  {
+    question: 'Is a medical exam ever required for guaranteed issue policies?',
+    answer:
+      'No — a defining feature of guaranteed issue coverage is that it doesn\u2019t require a medical exam or health questions. That\u2019s what makes it accessible to applicants who might not qualify for other products, though it\u2019s also why coverage amounts are typically more limited.',
+  },
+  {
+    question: 'How long does the graded period last?',
+    answer:
+      'It varies by carrier, but two to three years is common. After the graded period ends, the policy typically pays the full death benefit for any cause of death, including natural causes, as long as premiums have been paid.',
   },
 ];
 ---
@@ -68,7 +79,82 @@ const faqItems = [
         <li>Wanting the simplest possible application process</li>
         <li>Looking specifically for smaller, final-expense-style coverage</li>
         <li>Prior declines from other life insurance applications</li>
+        <li>Wanting coverage in place quickly without a lengthy underwriting review</li>
       </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="How Graded Benefits Work" title="Understanding the graded death benefit" />
+      <div class="prose">
+        <p>
+          Most guaranteed issue policies include a graded death benefit
+          period, usually during the first two to three years of the
+          policy. If the policyholder passes away from natural causes
+          during that window, the policy typically pays back the premiums
+          that were paid in, sometimes with interest, rather than the full
+          death benefit. Deaths from accidental causes are often covered at
+          the full death benefit even during the graded period, though this
+          varies by carrier and policy.
+        </p>
+        <p>
+          After the graded period ends, the policy generally pays the full
+          death benefit regardless of cause of death, as long as premiums
+          continue to be paid. This structure exists because the carrier
+          is accepting applicants without any health information — the
+          graded period helps manage that added uncertainty.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Comparing Options" title="Guaranteed issue vs. simplified issue" />
+      <div class="prose">
+        <p>
+          Both are designed for easier qualification than a fully
+          underwritten policy, but they work differently. Simplified issue
+          requires answering a short set of health questions — no exam, but
+          some screening — and often allows for larger coverage amounts and
+          more competitive pricing than guaranteed issue, without the
+          graded benefit period. Guaranteed issue skips health questions
+          entirely, which makes it more accessible but generally means
+          smaller coverage and, often, that graded period. If you're not
+          sure which health questions you'd answer favorably, comparing
+          both is usually worth doing before assuming guaranteed issue is
+          your only option.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="The Bigger Picture" title="Where guaranteed issue fits in your overall plan" />
+      <div class="prose">
+        <p>
+          Guaranteed issue is rarely meant to be someone's only life
+          insurance if they can qualify for something else — it's built to
+          be accessible when other paths aren't available, or as a
+          straightforward way to cover a specific, smaller need like final
+          expenses. If your health situation changes down the road, or if
+          you're not sure whether you'd qualify for simplified issue, it's
+          usually worth comparing both before defaulting to guaranteed
+          issue, since the trade-offs (smaller coverage, the graded period)
+          are worth understanding fully before you decide.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <InlineCTA
+        title="See if you qualify for guaranteed issue coverage"
+        text="Compare guaranteed issue and other options side by side."
+      />
     </div>
   </section>
 

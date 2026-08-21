@@ -1,6 +1,7 @@
 ---
 import ProductLayout from '../layouts/ProductLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import InlineCTA from '../components/InlineCTA.astro';
 import FAQ from '../components/FAQ.astro';
 
 const faqItems = [
@@ -17,12 +18,22 @@ const faqItems = [
   {
     question: 'What is indexed universal life insurance?',
     answer:
-      'Indexed universal life (IUL) is a type of universal life policy where cash value growth is tied to the performance of a market index, subject to caps, floors, and other policy terms. It\u2019s a more complex product \u2014 a licensed agent can walk you through the details.',
+      'Indexed universal life (IUL) is a type of universal life policy where cash value growth is tied to the performance of a market index, subject to caps, floors, and other policy terms. It\u2019s a more complex product — a licensed agent can walk you through the details.',
   },
   {
     question: 'Does flexibility come with more risk?',
     answer:
-      'The added flexibility of universal life means you have more control, but it also means the policy requires more active management \u2014 for example, underfunding a policy could affect how long coverage stays in force. Understanding the specific policy terms is important before enrolling.',
+      'The added flexibility of universal life means you have more control, but it also means the policy requires more active management — for example, underfunding a policy could affect how long coverage stays in force. Understanding the specific policy terms is important before enrolling.',
+  },
+  {
+    question: 'What is a death benefit option in universal life?',
+    answer:
+      'Many universal life policies let you choose between a level death benefit (a fixed amount) or an increasing death benefit (the coverage amount plus the policy\u2019s cash value). Increasing options typically cost more but provide a growing benefit over time.',
+  },
+  {
+    question: 'Can a universal life policy lapse?',
+    answer:
+      'Yes. If premium payments are too low relative to the policy\u2019s costs and the cash value is depleted, a universal life policy can lapse even if you\u2019ve been paying something toward it. This is one of the key differences from whole life, and it\u2019s why monitoring policy performance over time matters more with universal life.',
   },
 ];
 ---
@@ -50,9 +61,46 @@ const faqItems = [
         </p>
         <p>
           Because of that flexibility, universal life policies require a bit
-          more attention than a fixed whole life policy \u2014 understanding how
+          more attention than a fixed whole life policy — understanding how
           your premium payments affect the policy's cash value and staying
           power is an important part of owning one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Types" title="Common types of universal life insurance" />
+      <ul class="check-list" style="margin-top: var(--space-6);">
+        <li><strong>Guaranteed universal life (GUL)</strong> — prioritizes a guaranteed death benefit for as long as premiums are paid as scheduled, with less emphasis on cash value growth.</li>
+        <li><strong>Indexed universal life (IUL)</strong> — cash value growth is tied to the performance of a market index (like the S&amp;P 500), subject to caps, floors, and participation rates set by the carrier.</li>
+        <li><strong>Variable universal life (VUL)</strong> — cash value is invested in sub-accounts similar to mutual funds, offering higher growth potential alongside more investment risk.</li>
+      </ul>
+      <div class="prose" style="margin-top: var(--space-6);">
+        <p>
+          Each type balances flexibility, growth potential, and risk
+          differently. Which one fits depends on how much investment risk
+          you're comfortable with and whether guaranteed coverage or
+          potential cash value growth matters more to you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Flexibility" title="How premium flexibility actually works" />
+      <div class="prose">
+        <p>
+          Unlike whole life's fixed premium, universal life policies
+          generally let you pay more than the minimum in strong years and
+          less in leaner ones, as long as the policy's cash value can cover
+          its internal costs — things like the cost of insurance and
+          administrative fees. Pay too little for too long, and the policy
+          can lapse even though you've been making payments. This is the
+          central trade-off of universal life: more control in exchange for
+          more responsibility to monitor how the policy is performing.
         </p>
       </div>
     </div>
@@ -67,6 +115,33 @@ const faqItems = [
         <li>Interest in cash value growth options, including indexed strategies</li>
         <li>Long-term estate or legacy planning alongside a licensed advisor</li>
       </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Ownership" title="Monitoring your policy over time" />
+      <div class="prose">
+        <p>
+          Because universal life gives you control over premium payments,
+          it's worth checking in on the policy periodically rather than
+          setting it and forgetting it. Many carriers provide an annual
+          statement showing the policy's current cash value and projected
+          performance — reviewing it helps you catch early if premiums need
+          adjusting to keep the policy on track. This is one of the clearest
+          differences from whole life, where the fixed premium removes that
+          ongoing decision entirely.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <InlineCTA
+        title="Compare universal life options in Florida"
+        text="See what flexible permanent coverage could look like for your situation."
+      />
     </div>
   </section>
 

@@ -1,7 +1,9 @@
 ---
 import ProductLayout from '../layouts/ProductLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import InlineCTA from '../components/InlineCTA.astro';
 import FAQ from '../components/FAQ.astro';
+import { SITE } from '../data/site';
 
 const faqItems = [
   {
@@ -12,10 +14,10 @@ const faqItems = [
   {
     question: 'Can seniors with health conditions still qualify?',
     answer:
-      'Often, yes. Simplified issue and guaranteed issue products are designed with health conditions in mind \u2014 simplified issue involves a short health questionnaire, while guaranteed issue typically involves no health questions at all, subject to age and product limits.',
+      'Often, yes. Simplified issue and guaranteed issue products are designed with health conditions in mind — simplified issue involves a short health questionnaire, while guaranteed issue typically involves no health questions at all, subject to age and product limits.',
   },
   {
-    question: 'What\u2019s the difference between simplified issue and guaranteed issue?',
+    question: 'What’s the difference between simplified issue and guaranteed issue?',
     answer:
       'Simplified issue policies ask a limited set of health questions and skip the medical exam. Guaranteed issue policies typically ask no health questions, which can make them easier to qualify for, though they often come with lower coverage limits or a graded death benefit period.',
   },
@@ -23,6 +25,21 @@ const faqItems = [
     question: 'What do seniors typically use life insurance for?',
     answer:
       'Common goals include covering final expenses, leaving a financial gift to family, paying off remaining debt, or supplementing an existing policy that may no longer provide enough coverage.',
+  },
+  {
+    question: 'Does Medicare or Social Security affect life insurance eligibility?',
+    answer:
+      'No — Medicare and Social Security are government programs separate from private life insurance, and having either does not affect your eligibility for a life insurance policy. This site is not affiliated with or endorsed by any government agency.',
+  },
+  {
+    question: 'Should I replace an old policy or add a new one?',
+    answer:
+      'It depends on your existing coverage, its cost, and whether it still fits your goals. In some cases, adding a smaller supplemental policy makes more sense than replacing an existing one, especially if the older policy has favorable terms. Comparing your options with a licensed agent before canceling anything is generally a good idea.',
+  },
+  {
+    question: 'Can a family member help me apply?',
+    answer:
+      'Yes — many seniors have an adult child or other family member help gather information or sit in on the conversation with an agent. The policy itself is still based on your information and is subject to your own eligibility, but there’s no reason you have to go through the process alone.',
   },
 ];
 ---
@@ -62,17 +79,107 @@ const faqItems = [
 
   <section class="section section--cloud">
     <div class="container container--narrow">
-      <SectionHeading eyebrow="Considerations" title="What to think about at different ages" />
-      <ul class="check-list" style="margin-top: var(--space-6);">
-        <li>How age and health may affect which products you qualify for</li>
-        <li>Whether a medical exam, health questions, or no questions fits your situation</li>
-        <li>How much coverage fits your goals \u2014 final expenses, a legacy gift, or debt payoff</li>
-        <li>Whether an existing policy needs to be supplemented rather than replaced</li>
+      <SectionHeading eyebrow="By Age Range" title="What tends to change as you get older" />
+      <div class="prose" style="margin-bottom: var(--space-5);">
+        <p>
+          Age isn't the only factor, but it does tend to shift which
+          products make the most sense to compare first:
+        </p>
+      </div>
+      <ul class="check-list">
+        <li><strong>60s</strong> — many applicants still qualify for traditional term or whole life coverage, often at more competitive pricing than later years. This is frequently the last window for larger, fully underwritten policies.</li>
+        <li><strong>70s</strong> — options tend to shift toward simplified issue and smaller whole life or final expense policies, though fully underwritten coverage may still be available depending on health.</li>
+        <li><strong>80s and beyond</strong> — guaranteed issue and final expense products become the most common paths, often with smaller coverage amounts designed specifically for this age range.</li>
       </ul>
+      <div class="prose" style="margin-top: var(--space-6);">
+        <p>
+          These are general patterns, not fixed rules — health, tobacco use,
+          and the specific carrier all still play a role at any age.
+        </p>
+      </div>
     </div>
   </section>
 
   <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Common Goals" title="What seniors typically want coverage to do" />
+      <ul class="check-list" style="margin-top: var(--space-6);">
+        <li><strong>Covering final expenses</strong> — funeral, burial, cremation, and related costs, so family isn’t left to cover them.</li>
+        <li><strong>Leaving a financial gift</strong> — a death benefit intended for children, grandchildren, or a charitable cause.</li>
+        <li><strong>Paying off remaining debt</strong> — a mortgage, medical bills, or other balances.</li>
+        <li><strong>Supplementing existing coverage</strong> — adding a policy when an old one no longer provides enough, or has become too expensive to maintain.</li>
+        <li><strong>Supporting a surviving spouse</strong> — helping a spouse maintain their standard of living or cover shared expenses.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Underwriting" title="Underwriting considerations for seniors" />
+      <div class="prose">
+        <p>
+          Health questions and, in some cases, a medical exam are more
+          likely to affect pricing and eligibility as you get older, since
+          fully underwritten policies weigh current health and medical
+          history closely. That's exactly why simplified issue and
+          guaranteed issue products exist — they're built around easier
+          qualification for exactly this stage of life, trading some
+          coverage amount or pricing flexibility for a much simpler
+          application. Understanding which category you're likely to
+          qualify for before you apply can save time and avoid unnecessary
+          declines.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Before You Apply" title="What to have ready when you get a quote" />
+      <div class="prose" style="margin-bottom: var(--space-5);">
+        <p>
+          Having a few details on hand makes the quote and application
+          process faster, whichever type of coverage you're comparing:
+        </p>
+      </div>
+      <ul class="check-list">
+        <li>Your date of birth and ZIP code</li>
+        <li>A general sense of your current health and any ongoing conditions</li>
+        <li>Whether you use tobacco products, and how recently</li>
+        <li>A rough idea of the coverage amount you're considering</li>
+        <li>Details on any existing life insurance policies you already have</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <InlineCTA
+        title="See senior life insurance options in Florida"
+        text="Compare coverage built for your age and health, with no obligation."
+      />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Local & Personal" title="Working with a Florida agent" />
+      <div class="prose">
+        <p>
+          This site is run by {SITE.agentName}, a Florida resident licensed
+          insurance agent ({SITE.agentLicense}). When you request a quote,
+          it goes directly to a real person who can walk you through your
+          options — not a call center. That matters more at this stage of
+          life, where the right product often depends on details a form
+          alone can't capture. Learn more on the{' '}
+          <a href="/about/">About page</a>, or reach out directly through
+          the <a href="/contact/">contact page</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
     <div class="container container--narrow">
       <SectionHeading eyebrow="Explore More" title="Related coverage options" />
       <div class="prose">
@@ -88,7 +195,7 @@ const faqItems = [
     </div>
   </section>
 
-  <section class="section section--cloud">
+  <section class="section">
     <div class="container container--narrow">
       <SectionHeading eyebrow="FAQ" title="Senior life insurance questions" />
       <div style="margin-top: var(--space-7);">

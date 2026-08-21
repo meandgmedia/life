@@ -1,0 +1,53 @@
+---
+import Button from './Button.astro';
+
+type Props = {
+  title?: string;
+  text?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+};
+
+const {
+  title = 'See what you may qualify for',
+  text = 'Compare available coverage options in a few minutes — no obligation.',
+  ctaLabel = 'Get My Free Quote',
+  ctaHref = '/get-a-quote/',
+} = Astro.props;
+---
+
+<div class="inline-cta">
+  <div class="inline-cta__text">
+    <p class="inline-cta__title">{title}</p>
+    <p class="inline-cta__desc">{text}</p>
+  </div>
+  <Button href={ctaHref} variant="primary" size="md">{ctaLabel}</Button>
+</div>
+
+<style>
+  .inline-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+    background: var(--color-teal-tint);
+    border: 1px solid rgba(15, 163, 163, 0.25);
+    border-radius: var(--radius-md);
+    padding: var(--space-5) var(--space-6);
+    margin-block: var(--space-8);
+  }
+
+  .inline-cta__title {
+    font-weight: 600;
+    color: var(--color-ink);
+    margin: 0;
+  }
+
+  .inline-cta__desc {
+    margin-top: var(--space-1);
+    font-size: var(--fs-small);
+    color: var(--color-text-muted);
+    max-width: 46ch;
+  }
+</style>

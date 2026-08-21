@@ -5,37 +5,28 @@ import { SITE } from '../data/site';
 
 <BaseLayout
   title="Insurance Disclosures"
-  description="Important disclosures about insurance products, licensing, and eligibility referenced on this website."
+  description="Licensing, product availability, and compensation disclosures for Florida Life Insurance."
   path="/disclosures/"
-  noindex={true}
 >
   <section class="section--tight section">
     <div class="container container--narrow">
       <span class="eyebrow">Legal</span>
       <h1 style="margin-top: var(--space-4);">Insurance Disclosures</h1>
-      <p class="lead" style="margin-top: var(--space-4);">Last updated: [Date]</p>
-
-      <div class="legal-notice">
-        <strong>Draft placeholder.</strong> This page is a structural
-        starting point. It must be completed with your agency's actual
-        licensing details and reviewed by a licensed attorney or compliance
-        professional before this site goes live — we have not invented any
-        regulatory information here.
-      </div>
+      <p class="lead" style="margin-top: var(--space-4);">Effective Date: August 21, 2026</p>
 
       <div class="prose">
         <h2>Licensing</h2>
         <p>
-          {SITE.legalBusinessName} is a licensed insurance agency in the
-          state of Florida (License {SITE.floridaLicenseNumber}).
-          [Replace with your actual legal business name and license
-          number(s), including any individual producer licenses that need
-          to be disclosed.]
+          {SITE.name} is operated by {SITE.agentName}, a licensed
+          insurance agent in the state of Florida ({SITE.agentLicense}).
+          {SITE.agentName} is appointed to offer life insurance products
+          from a range of carriers, subject to each carrier's own
+          appointment and underwriting requirements.
         </p>
 
         <h2>Product Availability</h2>
         <p>
-          Not every product referenced on this site is available in every
+          Not every product referenced on this Site is available in every
           situation. Product availability, coverage amounts, features, and
           pricing vary by insurance carrier and are subject to the
           applicant's eligibility and the carrier's underwriting
@@ -44,31 +35,50 @@ import { SITE } from '../data/site';
 
         <h2>No Guarantee of Approval</h2>
         <p>
-          Requesting a quote through this site does not guarantee approval
-          for coverage. Some policies may be issued quickly depending on
-          eligibility and carrier underwriting; others may require
-          additional review, including a medical exam for certain products.
+          Requesting a quote through this Site does not guarantee approval
+          for coverage. Some policies — including many simplified issue and
+          guaranteed issue products — may be issued relatively quickly
+          depending on eligibility and carrier underwriting. Others,
+          particularly larger fully underwritten policies, may require
+          additional review, including a medical exam.
         </p>
 
-        <h2>Carrier Relationships</h2>
+        <h2>How Quotes and Applications Work</h2>
         <p>
-          [List the insurance carriers you are appointed to represent, or
-          describe generally how carrier relationships work, without
-          overstating any specific carrier partnership.]
+          Quotes and applications on this Site are powered by BackNine's
+          "Strife" quote and application platform, which connects you to
+          available carriers and products based on the information you
+          provide. Estimated options shown are not a binding offer of
+          coverage; final terms are determined by the applicable carrier
+          during underwriting.
+        </p>
+
+        <h2>Compensation Disclosure</h2>
+        <p>
+          As a licensed insurance agent, {SITE.agentName} may receive
+          compensation, such as commissions, from insurance carriers for
+          policies placed through this Site. This does not change the
+          price you pay for coverage.
         </p>
 
         <h2>State Availability</h2>
         <p>
           This website is currently focused on insurance products available
-          to Florida residents. [Add any additional state-specific
-          disclosures required by your compliance team.]
+          to Florida residents.
+        </p>
+
+        <h2>No Government Affiliation</h2>
+        <p>
+          This website is not affiliated with or endorsed by any government
+          agency, including Medicare or the Social Security Administration.
         </p>
 
         <h2>Questions</h2>
         <p>
           For questions about a specific product, license, or disclosure,
-          contact us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>{' '}
-          or through our <a href="/contact/">contact page</a>.
+          contact us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>,
+          by phone at <a href={SITE.phoneHref}>{SITE.phoneDisplay}</a>, or
+          through our <a href="/contact/">contact page</a>.
         </p>
       </div>
     </div>
@@ -76,17 +86,6 @@ import { SITE } from '../data/site';
 </BaseLayout>
 
 <style>
-  .legal-notice {
-    margin-top: var(--space-7);
-    padding: var(--space-5) var(--space-6);
-    background: var(--color-coral-tint);
-    border: 1px solid rgba(201, 62, 29, 0.25);
-    border-radius: var(--radius-md);
-    color: var(--color-ink);
-    font-size: var(--fs-small);
-    max-width: 68ch;
-  }
-
   .prose {
     margin-top: var(--space-8);
     max-width: 68ch;

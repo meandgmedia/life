@@ -45,7 +45,7 @@ export const quotePageFaq: FaqItem[] = [
   {
     question: 'What information do I need to get a quote?',
     answer:
-      'Basic details like your age, ZIP code, the coverage amount you\u2019re considering, and the type of policy you\u2019re interested in. Some products may ask general health questions as part of the process.',
+      'Basic details like your age, ZIP code, the coverage amount you’re considering, and the type of policy you’re interested in. Some products may ask general health questions as part of the process.',
   },
   {
     question: 'Will requesting a quote affect my credit?',
@@ -55,6 +55,6 @@ export const quotePageFaq: FaqItem[] = [
   {
     question: 'What happens after I submit my information?',
     answer:
-      'You\u2019ll be able to review available coverage options based on what you provided, and, if you choose, continue on to a full application online.',
+      'You’ll be able to review available coverage options based on what you provided, and, if you choose, continue on to a full application online.',
   },
 ];

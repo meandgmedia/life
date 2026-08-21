@@ -1,6 +1,7 @@
 ---
 import ProductLayout from '../layouts/ProductLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import InlineCTA from '../components/InlineCTA.astro';
 import FAQ from '../components/FAQ.astro';
 import { RELATED_SITES } from '../data/site';
 
@@ -8,7 +9,7 @@ const faqItems = [
   {
     question: 'How is final expense insurance different from a regular life insurance policy?',
     answer:
-      'Final expense insurance is a type of whole life insurance, typically with smaller coverage amounts designed specifically to help with funeral, burial, and related costs \u2014 rather than replacing income or covering a mortgage the way a larger policy might.',
+      'Final expense insurance is a type of whole life insurance, typically with smaller coverage amounts designed specifically to help with funeral, burial, and related costs — rather than replacing income or covering a mortgage the way a larger policy might.',
   },
   {
     question: 'Do I need a medical exam for final expense insurance?',
@@ -18,12 +19,27 @@ const faqItems = [
   {
     question: 'What can the death benefit be used for?',
     answer:
-      'Beneficiaries can generally use the death benefit for anything \u2014 funeral and burial costs, cremation, outstanding medical bills, or any other final expenses \u2014 there\u2019s typically no restriction on how the money is spent.',
+      'Beneficiaries can generally use the death benefit for anything — funeral and burial costs, cremation, outstanding medical bills, or any other final expenses — there\u2019s typically no restriction on how the money is spent.',
   },
   {
     question: 'What if I have health conditions?',
     answer:
       'Many final expense products are designed with health conditions in mind, including simplified issue and guaranteed issue options. Eligibility, pricing, and any waiting periods vary by carrier and product.',
+  },
+  {
+    question: 'How much does final expense insurance typically cost?',
+    answer:
+      'Cost depends on your age, health, tobacco use, and the coverage amount you choose. Because coverage amounts are usually smaller than a traditional policy, monthly premiums are often more manageable, but pricing still varies significantly by carrier and applicant.',
+  },
+  {
+    question: 'Does final expense insurance expire?',
+    answer:
+      'No. Final expense insurance is a form of whole life insurance, so it\u2019s designed to stay in force for your entire life as long as premiums are paid, unlike term life insurance, which covers a specific period.',
+  },
+  {
+    question: 'Can I name more than one beneficiary?',
+    answer:
+      'Yes, most final expense policies allow you to name multiple beneficiaries and specify how the death benefit should be split between them. You can typically update your beneficiaries later if your circumstances change.',
   },
 ];
 ---
@@ -47,7 +63,7 @@ const faqItems = [
           is a type of permanent life insurance designed to help cover the
           costs that come with a funeral, burial, cremation, and other
           end-of-life expenses. Coverage amounts are generally smaller than
-          traditional life insurance policies \u2014 often enough to cover
+          traditional life insurance policies — often enough to cover
           funeral-related costs and any small remaining bills, rather than
           replacing years of income.
         </p>
@@ -64,13 +80,96 @@ const faqItems = [
 
   <section class="section section--cloud">
     <div class="container container--narrow">
-      <SectionHeading eyebrow="Who Considers It" title="Common reasons people choose final expense insurance" />
-      <ul class="check-list" style="margin-top: var(--space-6);">
-        <li>Wanting to ease the financial burden on family members</li>
-        <li>Covering funeral, burial, or cremation costs specifically</li>
-        <li>Preferring simplified underwriting over a medical exam</li>
-        <li>Supplementing an existing life insurance policy with dedicated final-expense coverage</li>
+      <SectionHeading eyebrow="What It Covers" title="What final expenses typically include" />
+      <div class="prose" style="margin-bottom: var(--space-5);">
+        <p>
+          "Final expenses" is a broad term, but it generally covers costs
+          that come up around the end of life:
+        </p>
+      </div>
+      <ul class="check-list">
+        <li><strong>Funeral home services</strong> — staff, facilities, and coordination of the service itself.</li>
+        <li><strong>Burial or cremation costs</strong> — a casket or urn, cemetery plot, or cremation fees.</li>
+        <li><strong>Memorial costs</strong> — a headstone, marker, or other memorial expenses.</li>
+        <li><strong>Outstanding medical bills</strong> — costs not covered by health insurance at the time of death.</li>
+        <li><strong>Small remaining debts</strong> — credit cards or other balances a family might otherwise have to settle.</li>
       </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Underwriting" title="How final expense underwriting works" />
+      <div class="prose">
+        <p>
+          Most final expense policies fall into one of two underwriting
+          categories:
+        </p>
+      </div>
+      <ul class="check-list" style="margin-top: var(--space-5);">
+        <li><strong>Simplified issue</strong> — you answer a short set of health questions; no medical exam required. This is the most common path for final expense coverage.</li>
+        <li><strong>Guaranteed issue</strong> — typically no health questions at all, within an eligible age range. Coverage amounts are usually smaller, and many guaranteed issue policies include a graded death benefit period during the first two to three years, meaning a natural-causes death during that window may result in a return of premiums paid rather than the full death benefit.</li>
+      </ul>
+      <div class="prose" style="margin-top: var(--space-6);">
+        <p>
+          Which path fits depends on your health history. Simplified issue
+          often provides better pricing and higher coverage limits for
+          applicants who can answer the health questions favorably;
+          guaranteed issue exists specifically for people who may not
+          qualify any other way.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Choosing an Amount" title="How to choose a coverage amount" />
+      <div class="prose">
+        <p>
+          Because final expense insurance is meant to cover a fairly
+          specific set of costs, many people choose a coverage amount by
+          thinking through the arrangements they'd want — burial vs.
+          cremation, a particular funeral home, or family preferences —
+          and using that as a starting point when comparing quotes. Some
+          people also add a cushion for outstanding medical bills or small
+          debts they wouldn't want a family member to inherit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <InlineCTA
+        title="Compare final expense options today"
+        text="See what coverage may be available to help protect your family from these costs."
+      />
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Comparing Options" title="Final expense vs. traditional life insurance" />
+      <div class="prose">
+        <p>
+          Final expense insurance and traditional life insurance (like term
+          or larger whole life policies) are built for different purposes.
+          Traditional policies are often sized to replace years of income,
+          pay off a mortgage, or fund future expenses like education — which
+          usually means larger coverage amounts and, for term policies, a
+          defined end date. Final expense insurance is intentionally
+          smaller and permanent, built around a narrower goal: making sure
+          funeral and end-of-life costs don't fall on your family.
+        </p>
+        <p>
+          Because the coverage amount is smaller and underwriting is
+          simplified, final expense policies are also generally easier and
+          faster to qualify for than a large, fully underwritten policy —
+          which is exactly why they're a common choice for older adults or
+          anyone who wants a straightforward application process.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -88,7 +187,7 @@ const faqItems = [
         </p>
         <p>
           Specifically focused on final expense coverage? {RELATED_SITES.finalExpense.name}{' '}
-          specializes in Florida final expense insurance \u2014{' '}
+          specializes in Florida final expense insurance —{' '}
           <a href={RELATED_SITES.finalExpense.url}>learn more at {RELATED_SITES.finalExpense.url.replace('https://', '')}</a>.
         </p>
       </div>

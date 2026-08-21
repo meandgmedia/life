@@ -1,32 +1,37 @@
 # Florida Life Insurance
+Canonical URL: https://florida-life-insurance.com
 
-> Florida Life Insurance helps Florida residents compare life insurance
-> options and get a personalized quote online. The site covers term, whole,
-> universal, final expense, burial, senior, no-medical-exam, and guaranteed
-> issue life insurance, all specific to what's available to Florida
-> residents.
+> Florida Life Insurance is a Florida-focused life insurance resource and
+> online quoting platform run by Matt Saffian, a licensed Florida resident
+> insurance agent (License #G273626). The site helps Florida residents
+> understand their life insurance options in plain language, compare term,
+> whole, universal, final expense, burial, senior, no-medical-exam, and
+> guaranteed issue coverage side by side, and request a personalized quote
+> online through an embedded BackNine quote-and-apply tool — with a real
+> licensed agent behind every request, not a call center.
 
-Florida Life Insurance is a licensed insurance agency website focused
-exclusively on Florida consumers. It is not a national insurance directory
-and does not currently cover other states. Product availability, pricing,
-and eligibility vary by carrier and are subject to underwriting — no
-product on this site is guaranteed to be available to every applicant.
+Florida Life Insurance is focused exclusively on Florida consumers. It is
+not a national insurance directory and does not currently cover other
+states. Product availability, pricing, and eligibility vary by carrier and
+are subject to underwriting — no product on this site is guaranteed to be
+available to every applicant, and nothing on the site is a binding offer of
+insurance.
 
 ## Get a Quote
 
-- [Get a Free Quote](https://florida-life-insurance.com/get-a-quote/): Request a personalized Florida life insurance quote online.
+- [Get a Free Quote](https://florida-life-insurance.com/get-a-quote/): Request a personalized Florida life insurance quote online via the embedded BackNine quote-and-apply widget.
 
 ## Coverage Types
 
-- [Life Insurance (overview)](https://florida-life-insurance.com/life-insurance/): Introduction to all coverage types available in Florida.
-- [Term Life Insurance](https://florida-life-insurance.com/term-life-insurance/): Temporary coverage for a specific period (10/15/20/30 years).
+- [Life Insurance (overview)](https://florida-life-insurance.com/life-insurance/): Pillar guide to every coverage type available in Florida, how underwriting works, and how to size a coverage amount.
+- [Term Life Insurance](https://florida-life-insurance.com/term-life-insurance/): Temporary coverage for a specific period (10, 15, 20, or 30 years).
 - [Whole Life Insurance](https://florida-life-insurance.com/whole-life-insurance/): Permanent coverage with a cash value component.
-- [Universal Life Insurance](https://florida-life-insurance.com/universal-life-insurance/): Flexible permanent coverage with adjustable premiums.
-- [Final Expense Insurance](https://florida-life-insurance.com/final-expense-insurance/): Coverage for funeral, burial, and cremation costs.
-- [Burial Insurance](https://florida-life-insurance.com/burial-insurance/): Coverage focused specifically on funeral and burial costs.
-- [Senior Life Insurance](https://florida-life-insurance.com/senior-life-insurance/): Life insurance options for older adults.
-- [No Medical Exam Life Insurance](https://florida-life-insurance.com/no-medical-exam-life-insurance/): Coverage available without a traditional medical exam.
-- [Guaranteed Issue Life Insurance](https://florida-life-insurance.com/guaranteed-issue-life-insurance/): Coverage available without health questions, within eligible age ranges.
+- [Universal Life Insurance](https://florida-life-insurance.com/universal-life-insurance/): Flexible permanent coverage with adjustable premiums, including indexed (IUL) and guaranteed (GUL) variants.
+- [Final Expense Insurance](https://florida-life-insurance.com/final-expense-insurance/): Simplified-issue coverage for funeral, burial, and cremation costs.
+- [Burial Insurance](https://florida-life-insurance.com/burial-insurance/): Coverage focused specifically on funeral and burial costs, compared against pre-need funeral contracts.
+- [Senior Life Insurance](https://florida-life-insurance.com/senior-life-insurance/): Life insurance options for older adults by age range and health situation.
+- [No Medical Exam Life Insurance](https://florida-life-insurance.com/no-medical-exam-life-insurance/): Simplified issue, accelerated underwriting, and guaranteed issue coverage compared side by side.
+- [Guaranteed Issue Life Insurance](https://florida-life-insurance.com/guaranteed-issue-life-insurance/): Coverage available without health questions, within eligible age ranges, including how the graded death benefit works.
 
 ## Blog
 
@@ -36,8 +41,14 @@ product on this site is guaranteed to be available to every applicant.
 
 ## Company
 
-- [About](https://florida-life-insurance.com/about/): Who Florida Life Insurance is and how it works.
-- [Contact](https://florida-life-insurance.com/contact/): Contact form and direct contact information.
+- [About](https://florida-life-insurance.com/about/): Introduces Matt Saffian, the licensed Florida agent behind the site, and how working with him works.
+- [Contact](https://florida-life-insurance.com/contact/): Contact form and direct phone/email contact information.
+
+## Legal
+
+- [Privacy Policy](https://florida-life-insurance.com/privacy-policy/)
+- [Terms of Use](https://florida-life-insurance.com/terms-of-use/)
+- [Insurance Disclosures](https://florida-life-insurance.com/disclosures/)
 
 ## Related Site
 

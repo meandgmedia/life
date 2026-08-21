@@ -1,13 +1,14 @@
 ---
 import ProductLayout from '../layouts/ProductLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import InlineCTA from '../components/InlineCTA.astro';
 import FAQ from '../components/FAQ.astro';
 
 const faqItems = [
   {
     question: 'Is burial insurance the same as final expense insurance?',
     answer:
-      '"Burial insurance" and "final expense insurance" are often used interchangeably, and many carriers use the terms to describe the same type of product \u2014 a smaller, simplified-issue whole life policy meant to help cover funeral and burial-related costs.',
+      '"Burial insurance" and "final expense insurance" are often used interchangeably, and many carriers use the terms to describe the same type of product — a smaller, simplified-issue whole life policy meant to help cover funeral and burial-related costs.',
   },
   {
     question: 'What funeral-related costs might this coverage help with?',
@@ -17,12 +18,22 @@ const faqItems = [
   {
     question: 'How do I decide on a coverage amount?',
     answer:
-      'Many people start by thinking through the specific arrangements they\u2019d want \u2014 burial vs. cremation, a particular funeral home, or family preferences \u2014 and use that as a starting point for comparing coverage amounts during a quote.',
+      'Many people start by thinking through the specific arrangements they\u2019d want — burial vs. cremation, a particular funeral home, or family preferences — and use that as a starting point for comparing coverage amounts during a quote.',
   },
   {
     question: 'Can I get burial insurance at an older age?',
     answer:
-      'Yes \u2014 burial insurance is commonly purchased later in life, and many products are specifically designed for older adults with simplified or guaranteed issue underwriting. Availability and pricing still vary by age, carrier, and product.',
+      'Yes — burial insurance is commonly purchased later in life, and many products are specifically designed for older adults with simplified or guaranteed issue underwriting. Availability and pricing still vary by age, carrier, and product.',
+  },
+  {
+    question: 'Do I have to use a specific funeral home?',
+    answer:
+      'No. Burial insurance pays a death benefit to your named beneficiary, who can use it at any funeral home or provider they choose — the policy isn\u2019t tied to a specific funeral home or pre-need contract.',
+  },
+  {
+    question: 'How is burial insurance different from pre-need funeral contracts?',
+    answer:
+      'A pre-need contract is an agreement directly with a specific funeral home to lock in services and pricing in advance. Burial insurance, by contrast, pays a cash death benefit to your beneficiary, who has full flexibility in how and where it\u2019s used. Some people use one or the other; some use both as part of a broader plan.',
   },
 ];
 ---
@@ -42,15 +53,15 @@ const faqItems = [
       <SectionHeading eyebrow="Overview" title="What is burial insurance?" />
       <div class="prose">
         <p>
-          Burial insurance is a type of coverage \u2014 usually a small, simplified
-          whole life policy \u2014 designed specifically to help pay for the costs
+          Burial insurance is a type of coverage — usually a small, simplified
+          whole life policy — designed specifically to help pay for the costs
           associated with a funeral and burial or cremation. It's frequently
           purchased by people who want to plan ahead for those specific costs
           without leaving family members to cover them out of pocket.
         </p>
         <p>
           The term is closely related to{' '}
-          <a href="/final-expense-insurance/">final expense insurance</a> \u2014
+          <a href="/final-expense-insurance/">final expense insurance</a> —
           in practice, many carriers use "burial insurance" and "final
           expense insurance" to describe the same category of product.
         </p>
@@ -81,6 +92,69 @@ const faqItems = [
         Actual funeral and burial costs vary significantly by provider,
         location, and the specific arrangements chosen.
       </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Insurance vs. Pre-Need" title="Burial insurance vs. pre-need funeral contracts" />
+      <div class="prose">
+        <p>
+          It's easy to confuse burial insurance with a pre-need funeral
+          contract, but they work differently. A pre-need contract is an
+          agreement directly with a specific funeral home — you're
+          essentially pre-purchasing specific services and locking in
+          today's pricing with that provider.
+        </p>
+        <p>
+          Burial insurance, on the other hand, is a life insurance policy.
+          It pays a cash death benefit directly to your named beneficiary,
+          who has complete flexibility in how it's used and which provider
+          they choose — nothing is locked in with a specific funeral home.
+          For families who want flexibility, or who aren't sure yet which
+          funeral home they'd use, burial insurance can be the more
+          adaptable option.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Getting Started" title="Who typically buys burial insurance" />
+      <ul class="check-list" style="margin-top: var(--space-6);">
+        <li>People who want to make sure funeral costs don't fall on their family</li>
+        <li>Older adults looking for simplified or guaranteed issue underwriting</li>
+        <li>Anyone who prefers cash flexibility over a pre-need contract with one funeral home</li>
+        <li>Families supplementing an existing life insurance policy that doesn't specifically earmark funds for final costs</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <InlineCTA
+        title="Compare burial insurance options"
+        text="See what coverage may be available to help protect your family."
+      />
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Coverage Amounts" title="How people typically think about coverage amounts" />
+      <div class="prose">
+        <p>
+          Because burial insurance is meant to cover a fairly specific,
+          bounded set of costs, most people don't need to think about it
+          the way they'd think about a large term policy meant to replace
+          years of income. Instead, it's usually more useful to think
+          through the specific arrangements you'd want — the categories
+          listed above — and use that as your starting point, then adjust
+          up if you'd like a cushion for other small debts or medical bills
+          you wouldn't want left behind.
+        </p>
+      </div>
     </div>
   </section>
 

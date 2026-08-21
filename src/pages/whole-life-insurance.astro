@@ -1,13 +1,14 @@
 ---
 import ProductLayout from '../layouts/ProductLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import InlineCTA from '../components/InlineCTA.astro';
 import FAQ from '../components/FAQ.astro';
 
 const faqItems = [
   {
     question: 'How does cash value work?',
     answer:
-      'A portion of your premium may go toward a cash value component that can grow over time, depending on the policy. Many policies allow you to borrow against or withdraw from the cash value, though doing so can reduce the death benefit \u2014 details vary by carrier and product.',
+      'A portion of your premium may go toward a cash value component that can grow over time, depending on the policy. Many policies allow you to borrow against or withdraw from the cash value, though doing so can reduce the death benefit — details vary by carrier and product.',
   },
   {
     question: 'Are premiums fixed for life?',
@@ -22,7 +23,17 @@ const faqItems = [
   {
     question: 'Is whole life insurance a good investment?',
     answer:
-      'Whole life insurance is primarily a protection product with a cash value feature, not a replacement for traditional investment accounts. Whether it fits your goals depends on your full financial picture \u2014 a licensed agent can help you compare options.',
+      'Whole life insurance is primarily a protection product with a cash value feature, not a replacement for traditional investment accounts. Whether it fits your goals depends on your full financial picture — a licensed agent can help you compare options.',
+  },
+  {
+    question: 'What is a participating whole life policy?',
+    answer:
+      'A participating policy is eligible to receive dividends from the insurance carrier, which are not guaranteed and depend on the carrier\u2019s financial performance. Dividends, when paid, can typically be taken as cash, used to reduce premiums, or left to accumulate additional cash value.',
+  },
+  {
+    question: 'What happens to the cash value when I pass away?',
+    answer:
+      'In most whole life policies, beneficiaries receive the policy\u2019s death benefit, and the accumulated cash value generally stays with the insurance carrier rather than being paid out separately — unless the policy is specifically structured otherwise. Reviewing your policy\u2019s specific terms is the best way to understand how this works for your coverage.',
   },
 ];
 ---
@@ -66,13 +77,85 @@ const faqItems = [
         <li>Building a cash value component alongside a death benefit</li>
         <li>Leaving a guaranteed legacy or covering final expenses</li>
         <li>Predictable, level premiums for long-term budgeting</li>
+        <li>Estate or legacy planning alongside a broader financial plan</li>
       </ul>
     </div>
   </section>
 
   <section class="section">
     <div class="container container--narrow">
-      <SectionHeading eyebrow="Whole vs. Universal" title="Whole life vs. universal life insurance" />
+      <SectionHeading eyebrow="How It Works" title="How cash value grows" />
+      <div class="prose">
+        <p>
+          A portion of each premium payment goes toward the policy's cash
+          value, which grows on a schedule set by the carrier — typically
+          slowly in the earliest years and more noticeably over time. Some
+          whole life policies are "participating," meaning they may earn
+          dividends from the carrier's financial performance; these
+          dividends aren't guaranteed, but when paid, they can be taken as
+          cash, used to reduce premiums, or left to grow the policy's cash
+          value further.
+        </p>
+        <p>
+          Cash value is separate from the death benefit. In most policies,
+          if you pass away, your beneficiaries receive the death benefit,
+          and the cash value generally stays with the carrier — it isn't
+          typically an additional payout on top of the death benefit unless
+          the policy is specifically structured that way.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Using Cash Value" title="Ways cash value can be used while you're living" />
+      <ul class="check-list" style="margin-top: var(--space-6);">
+        <li><strong>Policy loans</strong> — borrowing against the cash value, which accrues interest and reduces the death benefit until repaid.</li>
+        <li><strong>Withdrawals</strong> — taking a portion of the cash value directly, which may reduce the death benefit and, depending on the amount, could have tax implications.</li>
+        <li><strong>Paid-up additions</strong> — using dividends (if any) to purchase small amounts of additional, fully paid-up coverage that also builds its own cash value.</li>
+        <li><strong>Surrendering the policy</strong> — canceling the policy entirely in exchange for its cash surrender value, which ends the coverage.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="General Information" title="How whole life insurance is typically taxed" />
+      <div class="prose">
+        <p>
+          Generally speaking, life insurance death benefits are received by
+          beneficiaries income tax-free under federal law, which is one
+          reason whole life insurance is often used for estate and legacy
+          planning. Cash value growth inside the policy also generally
+          accumulates on a tax-deferred basis, meaning you typically don't
+          owe taxes on that growth each year the way you might with a
+          taxable investment account.
+        </p>
+        <p>
+          That said, withdrawals, loans, and surrendering a policy can have
+          different tax treatment depending on the specifics — for example,
+          withdrawing more than you've paid in premiums may be taxable.
+          This is general information, not tax advice; a tax professional
+          can walk you through how a specific policy would affect your
+          situation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <InlineCTA
+        title="Compare whole life options in Florida"
+        text="See what permanent coverage and cash value growth could look like for you."
+      />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Explore More" title="Whole life vs. universal life insurance" />
       <div class="prose">
         <p>
           Both are types of permanent coverage, but they differ in
@@ -84,8 +167,12 @@ const faqItems = [
           depends on how much flexibility you want versus predictability.
         </p>
         <p>
-          If you're weighing whole life against a temporary option, see how
-          it compares to <a href="/term-life-insurance/">term life insurance</a>,
+          Whole life is also frequently used later in life for{' '}
+          <a href="/final-expense-insurance/">final expense planning</a> —
+          many final expense policies are actually small, simplified whole
+          life policies designed for easier qualification. If you're
+          weighing whole life against a temporary option, see how it
+          compares to <a href="/term-life-insurance/">term life insurance</a>,
           or return to the full{' '}
           <a href="/life-insurance/">overview of life insurance types</a> in
           Florida.

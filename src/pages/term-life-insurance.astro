@@ -1,6 +1,7 @@
 ---
 import ProductLayout from '../layouts/ProductLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import InlineCTA from '../components/InlineCTA.astro';
 import FAQ from '../components/FAQ.astro';
 
 const faqItems = [
@@ -17,19 +18,29 @@ const faqItems = [
   {
     question: 'What happens when the term ends?',
     answer:
-      'Coverage typically ends unless the policy includes a renewal or conversion option. Some term policies allow you to convert to a permanent policy without new health questions \u2014 availability depends on the product and carrier.',
+      'Coverage typically ends unless the policy includes a renewal or conversion option. Some term policies allow you to convert to a permanent policy without new health questions — availability depends on the product and carrier.',
   },
   {
     question: 'Is term life insurance cheaper than whole life insurance?',
     answer:
       'Term life insurance is generally more affordable than permanent coverage for the same death benefit, because it covers a limited period and doesn\u2019t build cash value. Actual pricing depends on your age, health, and the coverage amount.',
   },
+  {
+    question: 'Can I renew term life insurance after it expires?',
+    answer:
+      'Some term policies include a renewal option that lets you continue coverage after the initial term, usually at a higher premium reflecting your age at renewal. Not all policies include this feature, so it\u2019s worth confirming before you apply.',
+  },
+  {
+    question: 'What is a term life conversion rider?',
+    answer:
+      'A conversion rider, when included, allows you to convert some or all of your term coverage to a permanent policy without answering new health questions, typically before a certain age or within a set window. This can be valuable if your health changes and you later decide you want lifelong coverage.',
+  },
 ];
 ---
 
 <ProductLayout
   title="Term Life Insurance in Florida"
-  description="Affordable, temporary life insurance coverage for a specific period \u2014 10, 15, 20, or 30 years. Compare term life insurance options in Florida."
+  description="Affordable, temporary life insurance coverage for a specific period — 10, 15, 20, or 30 years. Compare term life insurance options in Florida."
   path="/term-life-insurance/"
   eyebrow="Florida &middot; Term Life"
   h1="Term Life Insurance in Florida"
@@ -42,7 +53,7 @@ const faqItems = [
       <SectionHeading eyebrow="Overview" title="What is term life insurance?" />
       <div class="prose">
         <p>
-          Term life insurance provides coverage for a set period of time \u2014
+          Term life insurance provides coverage for a set period of time —
           typically 10, 15, 20, or 30 years. If you pass away during that
           term, your beneficiaries receive the policy's death benefit. If the
           term ends and you're still living, coverage generally stops unless
@@ -51,7 +62,7 @@ const faqItems = [
         <p>
           Because it's designed to cover a defined period rather than your
           entire lifetime, term life insurance is typically one of the more
-          affordable ways to secure a larger death benefit \u2014 which is why
+          affordable ways to secure a larger death benefit — which is why
           it's often used to cover specific, time-limited financial
           responsibilities.
         </p>
@@ -67,7 +78,91 @@ const faqItems = [
         <li>Covering the remaining years on a mortgage</li>
         <li>Protecting a young family until children are financially independent</li>
         <li>Securing a larger death benefit at a more affordable premium</li>
+        <li>Covering a business loan or other debt with a defined payoff date</li>
       </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="How It Works" title="How term life premiums work" />
+      <div class="prose">
+        <p>
+          Most term policies use <strong>level premiums</strong>, meaning
+          the amount you pay stays the same for the entire length of the
+          term you selected — whether that's 10 years or 30. Your premium
+          is generally set based on your age, health, and tobacco use at
+          the time you apply, then locked in for the term, so it doesn't
+          increase as you get older during that period.
+        </p>
+        <p>
+          Some term policies are structured differently — for example,
+          annual renewable term, where the premium increases each year as
+          you age. Level term is far more common for people planning around
+          a specific financial responsibility, since it makes budgeting
+          predictable for the length of the term.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Choosing a Term" title="Choosing the right term length" />
+      <div class="prose">
+        <p>
+          The most common approach is to match the term length to the
+          responsibility you're covering:
+        </p>
+      </div>
+      <ul class="check-list" style="margin-top: var(--space-5);">
+        <li><strong>10-year term</strong> — often used for shorter-term debt or a specific near-term financial gap.</li>
+        <li><strong>15-year term</strong> — a middle-ground option, sometimes matched to a shorter mortgage or a set savings goal.</li>
+        <li><strong>20-year term</strong> — one of the most common choices, frequently tied to raising children through early adulthood or a 20- to 30-year mortgage.</li>
+        <li><strong>30-year term</strong> — typically the longest standard option, often chosen by younger buyers who want coverage locked in for a long stretch of their working years.</li>
+      </ul>
+      <div class="prose" style="margin-top: var(--space-6);">
+        <p>
+          There's no rule that says you have to pick the longest or shortest
+          option — the goal is matching the term to when you'd actually
+          need the coverage to be in place.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <SectionHeading eyebrow="Features" title="Riders and optional features" />
+      <div class="prose">
+        <p>
+          Depending on the carrier and product, term life policies may offer
+          optional riders that adjust how the policy works:
+        </p>
+      </div>
+      <ul class="check-list" style="margin-top: var(--space-5);">
+        <li><strong>Conversion rider</strong> — allows converting some or all of the policy to permanent coverage without new health questions, usually within a defined window.</li>
+        <li><strong>Return of premium</strong> — some products return some or all premiums paid if you outlive the term, typically at a higher cost than standard term.</li>
+        <li><strong>Accelerated death benefit</strong> — may allow early access to a portion of the death benefit if you're diagnosed with a qualifying terminal illness.</li>
+        <li><strong>Waiver of premium</strong> — in some policies, waives premium payments if you become disabled and unable to work, subject to the policy's definition of disability.</li>
+      </ul>
+      <div class="prose" style="margin-top: var(--space-6);">
+        <p>
+          Not every carrier offers every rider, and some add to the cost of
+          the policy. Reviewing which features actually matter for your
+          situation — rather than adding everything available — is part of
+          comparing options properly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cloud">
+    <div class="container container--narrow">
+      <InlineCTA
+        title="See what term coverage would cost you"
+        text="Answer a few questions and compare real term life options available in Florida."
+      />
     </div>
   </section>
 
@@ -85,7 +180,7 @@ const faqItems = [
           lifelong, cash-value component.
         </p>
         <p>
-          Many people use both at different life stages \u2014 for example,
+          Many people use both at different life stages — for example,
           term coverage while raising a family, and a smaller permanent
           policy for final expenses later in life. You can explore{' '}
           <a href="/final-expense-insurance/">final expense insurance</a>{' '}

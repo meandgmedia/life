@@ -44,7 +44,7 @@ import { SITE } from '../data/site';
     border-radius: var(--radius-sm);
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1320px) {
     .mobile-nav-toggle {
       display: none;
     }
@@ -87,7 +87,7 @@ import { SITE } from '../data/site';
     animation: mobile-nav-in var(--duration-base) var(--ease-out);
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1320px) {
     .mobile-nav-panel {
       display: none;
     }
@@ -191,7 +191,7 @@ import { SITE } from '../data/site';
 
     // Close the mobile panel automatically if the viewport grows past the
     // nav breakpoint (e.g. rotating a tablet to landscape).
-    const mq = window.matchMedia('(min-width: 900px)');
+    const mq = window.matchMedia('(min-width: 1320px)');
     mq.addEventListener('change', (e) => {
       if (e.matches) closeMenu();
     });

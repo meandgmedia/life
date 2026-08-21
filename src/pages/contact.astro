@@ -1,13 +1,9 @@
 ---
 // ============================================================================
-// Contact form — currently wired for Web3Forms (https://web3forms.com), a
-// service that lets a static site accept form submissions without a backend.
-//
-// TO GO LIVE:
-//   1. Create a free Web3Forms account and get an Access Key.
-//   2. Replace YOUR_WEB3FORMS_ACCESS_KEY_HERE below with the real key.
-//   That's the only change needed \u2014 the form already posts to Web3Forms'
-//   endpoint and includes the recommended honeypot spam field.
+// Contact form — wired for Web3Forms (https://web3forms.com), a service
+// that lets a static site accept form submissions without a backend.
+// Live with a real access key below — submissions go to the inbox tied to
+// that Web3Forms account.
 //
 // If you'd rather use a different provider (Formspree, Netlify Forms, your
 // own endpoint, etc.), just change the <form action="..."> URL and the
@@ -17,7 +13,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import { SITE } from '../data/site';
 
-const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY_HERE';
+const WEB3FORMS_ACCESS_KEY = '7b7eae7a-0154-49f4-8047-730b2a6049ef';
 ---
 
 <BaseLayout
@@ -43,7 +39,7 @@ const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY_HERE';
         action="https://api.web3forms.com/submit"
         method="POST"
       >
-        <!-- Web3Forms required fields \u2014 see comment above to activate -->
+        <!-- Web3Forms required fields — see comment above to activate -->
         <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
         <input type="hidden" name="subject" value="New message from florida-life-insurance.com" />
         <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off" />

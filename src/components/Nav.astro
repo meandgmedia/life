@@ -24,7 +24,7 @@ const currentPath = Astro.url.pathname;
     display: none;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1320px) {
     .nav {
       display: block;
     }
@@ -33,12 +33,15 @@ const currentPath = Astro.url.pathname;
   .nav__list {
     display: flex;
     align-items: center;
-    gap: var(--space-6);
+    flex-wrap: nowrap;
+    gap: var(--space-5);
   }
 
   .nav__link {
     position: relative;
-    font-size: 0.9375rem;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 0.875rem;
     font-weight: 500;
     color: var(--color-ink);
     padding-block: var(--space-2);

@@ -7,70 +7,95 @@ import { SITE } from '../data/site';
   title="Terms of Use"
   description="Terms and conditions for using the Florida Life Insurance website."
   path="/terms-of-use/"
-  noindex={true}
 >
   <section class="section--tight section">
     <div class="container container--narrow">
       <span class="eyebrow">Legal</span>
       <h1 style="margin-top: var(--space-4);">Terms of Use</h1>
-      <p class="lead" style="margin-top: var(--space-4);">Last updated: [Date]</p>
-
-      <div class="legal-notice">
-        <strong>Draft placeholder.</strong> This page is a structural
-        starting point, not a finished legal document. It must be reviewed
-        and completed by a licensed attorney before this site goes live.
-      </div>
+      <p class="lead" style="margin-top: var(--space-4);">Effective Date: August 21, 2026</p>
 
       <div class="prose">
-        <h2>Acceptance of Terms</h2>
         <p>
-          By using this website, you agree to these Terms of Use. If you do
-          not agree, please do not use this site. [Complete with your
-          actual acceptance terms.]
+          These Terms of Use govern your access to and use of{' '}
+          {SITE.domain.replace('https://', '')} (the "Site"), operated by
+          {' '}{SITE.agentName} ({SITE.agentLicense}) doing business as{' '}
+          {SITE.name}. By using the Site, you agree to these terms. If you
+          do not agree, please do not use the Site.
         </p>
 
-        <h2>No Guarantee of Coverage</h2>
+        <h2>Educational Purpose; No Guarantee of Coverage</h2>
         <p>
-          Information on this site is for general educational purposes and
-          does not constitute an offer of insurance, a binding quote, or a
-          guarantee of coverage. Product availability, pricing, and
-          eligibility are determined by the applicable insurance carrier
-          and are subject to underwriting.
+          Content on this Site is provided for general educational and
+          informational purposes about life insurance in Florida. It does
+          not constitute an offer of insurance, a binding quote, financial
+          or legal advice, or a guarantee of coverage. Product availability,
+          coverage amounts, pricing, and eligibility are determined by the
+          applicable insurance carrier and are subject to underwriting.
+          Requesting a quote through this Site does not guarantee approval.
         </p>
 
         <h2>Use of the Site</h2>
         <p>
-          [Describe permitted and prohibited uses of the site, intellectual
-          property ownership, and any restrictions on copying or
-          redistributing content.]
+          You agree to use the Site only for lawful purposes and to provide
+          accurate information when requesting a quote or contacting us.
+          The content, design, and branding of this Site are the property
+          of {SITE.name} and may not be copied, reproduced, or
+          redistributed without permission, except as necessary for your
+          own personal, non-commercial use of the Site.
         </p>
 
-        <h2>Third-Party Links and Tools</h2>
+        <h2>Third-Party Tools and Links</h2>
         <p>
-          This site may link to or embed third-party tools, including the
-          BackNine quote and application platform and{' '}
+          This Site embeds the BackNine ("Strife") quote and application
+          platform, uses Web3Forms to deliver contact form submissions, and
+          may link to third-party websites, including{' '}
           <a href="https://floridafinalexpense.com">floridafinalexpense.com</a>.
-          We are not responsible for the content or practices of third-party
-          sites. [Complete with your actual third-party terms.]
+          We do not control and are not responsible for the content,
+          availability, or privacy practices of third-party tools or
+          websites. Your use of those tools and sites is subject to their
+          own terms and policies.
+        </p>
+
+        <h2>Disclaimer of Warranties</h2>
+        <p>
+          The Site and its content are provided "as is" and "as available"
+          without warranties of any kind, express or implied, including
+          accuracy, completeness, or fitness for a particular purpose. We
+          make reasonable efforts to keep information on the Site current
+          and accurate but do not guarantee it.
         </p>
 
         <h2>Limitation of Liability</h2>
         <p>
-          [Complete with your actual limitation of liability language,
-          reviewed by counsel.]
+          To the fullest extent permitted by law, {SITE.agentName} and
+          {' '}{SITE.name} are not liable for any indirect, incidental, or
+          consequential damages arising from your use of the Site or
+          reliance on its content. Nothing in these terms limits any
+          liability that cannot be limited under applicable Florida or
+          federal law.
         </p>
 
         <h2>Governing Law</h2>
         <p>
-          These terms are governed by the laws of the State of Florida.
-          [Complete with your actual governing law and dispute resolution
-          terms.]
+          These Terms of Use are governed by the laws of the State of
+          Florida, without regard to its conflict-of-laws principles. Any
+          dispute arising from these terms or your use of the Site will be
+          subject to the jurisdiction of the courts located in Florida.
+        </p>
+
+        <h2>Changes to These Terms</h2>
+        <p>
+          We may update these Terms of Use from time to time. The
+          "Effective Date" above reflects the most recent revision.
+          Continued use of the Site after changes are posted constitutes
+          acceptance of the updated terms.
         </p>
 
         <h2>Contact Us</h2>
         <p>
           Questions about these terms can be sent to{' '}
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or through our{' '}
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>, by phone at{' '}
+          <a href={SITE.phoneHref}>{SITE.phoneDisplay}</a>, or through our{' '}
           <a href="/contact/">contact page</a>.
         </p>
       </div>
@@ -79,17 +104,6 @@ import { SITE } from '../data/site';
 </BaseLayout>
 
 <style>
-  .legal-notice {
-    margin-top: var(--space-7);
-    padding: var(--space-5) var(--space-6);
-    background: var(--color-coral-tint);
-    border: 1px solid rgba(201, 62, 29, 0.25);
-    border-radius: var(--radius-md);
-    color: var(--color-ink);
-    font-size: var(--fs-small);
-    max-width: 68ch;
-  }
-
   .prose {
     margin-top: var(--space-8);
     max-width: 68ch;
@@ -98,10 +112,6 @@ import { SITE } from '../data/site';
   .prose h2 {
     margin-top: var(--space-8);
     font-size: var(--fs-h3);
-  }
-
-  .prose h2:first-child {
-    margin-top: 0;
   }
 
   .prose p {

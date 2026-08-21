@@ -1,6 +1,6 @@
 // Central site configuration.
 // Keep business facts here so they're defined once and reused everywhere
-// (header, footer, SEO defaults, structured data in a later phase).
+// (header, footer, SEO defaults, structured data, legal pages).
 
 export const SITE = {
   name: 'Florida Life Insurance',
@@ -10,14 +10,14 @@ export const SITE = {
   description:
     'Compare life insurance options available in Florida and get your personalized quote online.',
   locale: 'en-US',
-  // TODO: Replace with the real licensed business/agency name before launch.
-  legalBusinessName: '[Legal Business Name Placeholder]',
-  // TODO: Replace with the real Florida agency/agent license number(s).
-  floridaLicenseNumber: '[Florida License # Placeholder]',
-  // TODO: Replace with a real support phone number.
-  phoneDisplay: '(000) 000-0000',
-  phoneHref: 'tel:+10000000000',
-  // TODO: Replace with a real support/contact email.
+  legalBusinessName: 'Florida Life Insurance',
+  // Individual agent operating this site.
+  agentName: 'Matt Saffian',
+  agentLicense: 'Florida Resident License #G273626',
+  floridaLicenseNumber: 'G273626',
+  phoneDisplay: '(772) 226-0875',
+  phoneHref: 'tel:+17722260875',
+  // TODO: Replace with a real support/contact email if different from below.
   email: 'info@florida-life-insurance.com',
   social: {
     // TODO: Add real social profile URLs when available, or remove.

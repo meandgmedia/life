@@ -15,7 +15,7 @@ import { RELATED_SITES } from '../data/site';
 const steps = [
   {
     title: 'Get Your Quote',
-    description: 'Tell us about yourself and the coverage you\u2019re looking for.',
+    description: 'Tell us about yourself and the coverage you’re looking for.',
   },
   {
     title: 'Compare Your Options',
@@ -56,8 +56,8 @@ const trustPoints = [
 ---
 
 <BaseLayout
-  title="Florida Life Insurance | Life Insurance Made Simple."
-  description="Compare life insurance options available in Florida and get your personalized quote online. Term, whole, universal, final expense, and senior life coverage."
+  title="As Low As $3/mo - Florida Life Insurance"
+  description="As low as $3/mo. Compare Florida life insurance options and get your personalized quote online today."
   path="/"
 >
   <!-- HERO -->
@@ -78,31 +78,6 @@ const trustPoints = [
           <Button href="/life-insurance/" variant="secondary" size="lg">Explore Life Insurance</Button>
         </div>
       </div>
-
-      <!-- Signature visual: a stylized quote-flow mockup, not stock photography -->
-      <div class="quote-mock" aria-hidden="true">
-        <div class="quote-mock__header">
-          <span class="quote-mock__dot"></span>
-          <span class="quote-mock__dot"></span>
-          <span class="quote-mock__dot"></span>
-        </div>
-        <div class="quote-mock__field">
-          <span class="quote-mock__label">Coverage Amount</span>
-          <span class="quote-mock__value">$250,000</span>
-        </div>
-        <div class="quote-mock__row">
-          <div class="quote-mock__field quote-mock__field--half">
-            <span class="quote-mock__label">ZIP Code</span>
-            <span class="quote-mock__value">32901</span>
-          </div>
-          <div class="quote-mock__field quote-mock__field--half">
-            <span class="quote-mock__label">Date of Birth</span>
-            <span class="quote-mock__value">01 / 15 / 1985</span>
-          </div>
-        </div>
-        <div class="quote-mock__cta">See My Options</div>
-        <div class="quote-mock__footnote">Estimated options &middot; no obligation</div>
-      </div>
     </div>
   </section>
 
@@ -112,7 +87,7 @@ const trustPoints = [
       <SectionHeading
         eyebrow="Get a Quote"
         title="See your options in minutes"
-        lead="Answer a few questions to compare the life insurance coverage available to you \u2014 no obligation."
+        lead="Answer a few questions to compare the life insurance coverage available to you — no obligation."
         align="center"
       />
       <div style="margin-top: var(--space-8);">
@@ -245,19 +220,13 @@ const trustPoints = [
   }
 
   .hero__inner {
-    display: grid;
-    gap: var(--space-9);
-    align-items: center;
-  }
-
-  @media (min-width: 1000px) {
-    .hero__inner {
-      grid-template-columns: 1.05fr 0.95fr;
-    }
+    display: flex;
+    justify-content: center;
   }
 
   .hero__copy {
-    max-width: 560px;
+    max-width: 640px;
+    text-align: center;
   }
 
   .hero h1 {
@@ -266,96 +235,15 @@ const trustPoints = [
 
   .hero .lead {
     margin-top: var(--space-4);
+    margin-inline: auto;
   }
 
   .hero__actions {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: var(--space-4);
     margin-top: var(--space-7);
-  }
-
-  /* Quote flow mockup — CSS-built, not a photo */
-  .quote-mock {
-    justify-self: center;
-    width: 100%;
-    max-width: 380px;
-    background: var(--color-white);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    padding: var(--space-6);
-    display: none;
-  }
-
-  @media (min-width: 640px) {
-    .quote-mock {
-      display: block;
-    }
-  }
-
-  .quote-mock__header {
-    display: flex;
-    gap: 6px;
-    margin-bottom: var(--space-5);
-  }
-
-  .quote-mock__dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--color-border-strong);
-  }
-
-  .quote-mock__field {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-    padding: var(--space-3) var(--space-4);
-    background: var(--color-cloud);
-    border-radius: var(--radius-sm);
-    margin-bottom: var(--space-3);
-  }
-
-  .quote-mock__row {
-    display: flex;
-    gap: var(--space-3);
-  }
-
-  .quote-mock__field--half {
-    flex: 1;
-  }
-
-  .quote-mock__label {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-  }
-
-  .quote-mock__value {
-    font-family: var(--font-display);
-    font-weight: 600;
-    color: var(--color-ink);
-  }
-
-  .quote-mock__cta {
-    margin-top: var(--space-4);
-    text-align: center;
-    background: var(--color-coral);
-    color: var(--color-white);
-    font-weight: 600;
-    font-size: var(--fs-small);
-    padding: var(--space-3);
-    border-radius: var(--radius-full);
-  }
-
-  .quote-mock__footnote {
-    text-align: center;
-    margin-top: var(--space-3);
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
   }
 
   .quote-disclosure {
